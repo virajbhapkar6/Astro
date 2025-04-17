@@ -1,1 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProcedureApp from '../components/ProcedureApp';
+---
 
+<Layout title="Procedure Verification">
+  <main class="flex items-center justify-center min-h-screen p-4 relative bg-cover bg-center h-[500px]" 
+              style="background-image: url('/avatars/web_image.jpg')">
+    <ProcedureApp client:load />
+  </main>
+</Layout>
