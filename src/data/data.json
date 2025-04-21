@@ -1,0 +1,34 @@
+[
+    {
+      "id": "1",
+      "author": {
+        "name": "Maria Clark",
+        "avatar": "/avatars/maria.jpg",
+        "color": "bg-purple-100"
+      },
+      "daysAgo": 4,
+      "content": "Everything looks good overall. Please confirm the depreciation rate used for Office Equipment is aligned with the latest policy updates. Otherwise, no further revisions needed."
+    },
+    {
+      "id": "2",
+      "author": {
+        "name": "James Turner",
+        "avatar": "/avatars/james.jpg",
+        "color": "bg-teal-100"
+      },
+      "daysAgo": 6,
+      "content": "Final calculations seem in line with expectations. However, I recommend revisiting the assumptions for leasehold improvements, as some minor discrepancies were noted in the initial review. Let's ensure consistency with last year's data."
+    },
+    {
+      "id": "3",
+      "author": {
+        "name": "Ruth Thomas",
+        "avatar": "/avatars/ruth.jpg",
+        "color": "bg-blue-100"
+      },
+      "daysAgo": 8,
+      "content": "Great progress on the depreciation calculations. Just a heads-up: Ensure all data points for the 2023 figures are correctly aligned with the most recent audit, especially the residual value rates for Motor Vehicles."
+    }
+  ]
+  
+  
