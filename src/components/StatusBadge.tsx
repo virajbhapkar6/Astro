@@ -10,13 +10,13 @@ const StatusBadge: Component<StatusBadgeProps> = (props) => {
   const getColor = () => {
     switch (props.status) {
       case "E/O":
-        return "bg-blue-500"
+        return "bg-[#6FA6FF]"
       case "P":
-        return "bg-green-500"
+        return "bg-[#10B981]"
       case "V/A":
-        return "bg-red-500"
+        return "bg-[#D85151]"
       case "D/D":
-        return "bg-amber-500"
+        return "bg-[#14B8A6]"
       default:
         return "bg-gray-500"
     }
@@ -24,7 +24,7 @@ const StatusBadge: Component<StatusBadgeProps> = (props) => {
 
   return (
     <span
-      class={`inline-flex items-center justify-center px-2 py-1 text-xs font-medium text-white rounded-full ${getColor()}`}
+      class={`inline-flex items-center justify-center px-2 py-1 text-xs font-medium rounded-full ${getColor()}`}
     >
       {props.status}
     </span>

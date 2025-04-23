@@ -1,32 +1,33 @@
-import { For } from "solid-js"
 import type { Component } from "solid-js"
 
-type ConclusionItem = {
-  text: string
-  preparation: string
-  review: string
-}
-
-type ConclusionsTableProps = {
-  conclusions: ConclusionItem[]
-}
-
-const ConclusionsTable: Component<ConclusionsTableProps> = (props) => {
+const ConclusionsTable: Component = () => {
   return (
-    <div class="overflow-hidden border border-gray-200 rounded-lg">
+    <div class="overflow-hidden border border-[#C0C0C0] rounded-lg">
       <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
+        <thead class="bg-[#F3F4F6]">
           <tr>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th
+              scope="col"
+              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
+            >
               Conclusions
             </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th
+              scope="col"
+              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
+            >
               Preparation
             </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th
+              scope="col"
+              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
+            >
               Review
             </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th
+              scope="col"
+              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path
                   fill-rule="evenodd"
@@ -38,34 +39,127 @@ const ConclusionsTable: Component<ConclusionsTableProps> = (props) => {
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-          <For each={props.conclusions}>
-            {(item) => (
-              <tr>
-                <td class="px-6 py-4 whitespace-normal text-sm text-gray-900">{item.text}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
-                    {item.preparation}
-                  </span>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                    {item.review}
-                  </span>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  <button class="text-gray-400 hover:text-gray-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path
-                        fill-rule="evenodd"
-                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </td>
-              </tr>
-            )}
-          </For>
+          {/* Row 1 - Static data */}
+          <tr>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-normal text-sm text-[#4F4F4F]">
+              The work has been performed in accordance with the audit program.
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+            <svg width="58" height="22" viewBox="0 0 58 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.269409" width="57.2436" height="22" rx="8" fill="#E89F51"/>
+            <path d="M11.0279 6.27273H13.3035L15.7069 12.1364H15.8092L18.2126 6.27273H20.4882V15H18.6984V9.3196H18.6259L16.3674 14.9574H15.1487L12.8901 9.2983H12.8177V15H11.0279V6.27273ZM29.7087 9.32812H27.8422C27.8081 9.08665 27.7385 8.87216 27.6334 8.68466C27.5283 8.49432 27.3933 8.33239 27.2286 8.19886C27.0638 8.06534 26.8735 7.96307 26.6575 7.89205C26.4445 7.82102 26.2129 7.78551 25.9629 7.78551C25.5112 7.78551 25.1178 7.89773 24.7825 8.12216C24.4473 8.34375 24.1874 8.66761 24.0027 9.09375C23.8181 9.51705 23.7257 10.0312 23.7257 10.6364C23.7257 11.2585 23.8181 11.7812 24.0027 12.2045C24.1902 12.6278 24.4516 12.9474 24.7868 13.1634C25.122 13.3793 25.5098 13.4872 25.9502 13.4872C26.1973 13.4872 26.426 13.4545 26.6362 13.3892C26.8493 13.3239 27.0382 13.2287 27.203 13.1037C27.3678 12.9759 27.5041 12.821 27.6121 12.6392C27.7229 12.4574 27.7996 12.25 27.8422 12.017L29.7087 12.0256C29.6604 12.4261 29.5397 12.8125 29.3465 13.1847C29.1561 13.554 28.899 13.8849 28.5752 14.1776C28.2541 14.4673 27.8706 14.6974 27.4246 14.8679C26.9814 15.0355 26.48 15.1193 25.9203 15.1193C25.1419 15.1193 24.4459 14.9432 23.8323 14.5909C23.2215 14.2386 22.7385 13.7287 22.3834 13.0611C22.0311 12.3935 21.855 11.5852 21.855 10.6364C21.855 9.68466 22.034 8.875 22.3919 8.20739C22.7499 7.53977 23.2357 7.03125 23.8493 6.68182C24.4629 6.32955 25.1533 6.15341 25.9203 6.15341C26.426 6.15341 26.8948 6.22443 27.3266 6.36648C27.7612 6.50852 28.1462 6.71591 28.4814 6.98864C28.8166 7.25852 29.0894 7.58949 29.2996 7.98153C29.5127 8.37358 29.649 8.82244 29.7087 9.32812Z" fill="white"/>
+            <path d="M47.1825 8.79375C47.6231 8.35313 47.6231 7.64063 47.1825 7.20469C46.7419 6.76875 46.0294 6.76406 45.5934 7.20469L40.3903 12.4078L38.1872 10.2047C37.7466 9.76406 37.0341 9.76406 36.5981 10.2047C36.1622 10.6453 36.1575 11.3578 36.5981 11.7938L39.5981 14.7938C40.0387 15.2344 40.7512 15.2344 41.1872 14.7938L47.1825 8.79375Z" fill="white"/>
+            </svg>
+
+            </td>
+            <td class="flex gap-2 px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+            <svg width="53" height="22" viewBox="0 0 53 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.512939" width="52.2436" height="22" rx="8" fill="#44916F"/>
+            <path d="M11.2715 15V6.27273H14.7146C15.3737 6.27273 15.9362 6.39062 16.4021 6.62642C16.8709 6.85937 17.2274 7.19034 17.4717 7.61932C17.7189 8.04545 17.8425 8.54687 17.8425 9.12358C17.8425 9.70312 17.7175 10.2017 17.4675 10.6193C17.2175 11.0341 16.8553 11.3523 16.3808 11.5739C15.9092 11.7955 15.3382 11.9062 14.6678 11.9062H12.3624V10.4233H14.3695C14.7217 10.4233 15.0144 10.375 15.2473 10.2784C15.4803 10.1818 15.6536 10.0369 15.7672 9.84375C15.8837 9.65057 15.9419 9.41051 15.9419 9.12358C15.9419 8.83381 15.8837 8.58949 15.7672 8.39062C15.6536 8.19176 15.4788 8.04119 15.2431 7.93892C15.0101 7.83381 14.7161 7.78125 14.361 7.78125H13.1166V15H11.2715ZM15.9845 11.0284L18.1536 15H16.1166L13.9945 11.0284H15.9845ZM18.8141 7.79403V6.27273H25.9817V7.79403H23.3098V15H21.486V7.79403H18.8141Z" fill="white"/>
+            <path d="M42.426 8.79375C42.8667 8.35313 42.8667 7.64063 42.426 7.20469C41.9854 6.76875 41.2729 6.76406 40.837 7.20469L35.6338 12.4078L33.4307 10.2047C32.9901 9.76406 32.2776 9.76406 31.8417 10.2047C31.4057 10.6453 31.401 11.3578 31.8417 11.7938L34.8417 14.7938C35.2823 15.2344 35.9948 15.2344 36.4307 14.7938L42.426 8.79375Z" fill="white"/>
+            </svg>
+            <svg width="54" height="22" viewBox="0 0 54 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.75647" width="53.2436" height="22" rx="8" fill="#44916F"/>
+            <path d="M16.2494 8.78267C16.2153 8.43892 16.069 8.17187 15.8104 7.98153C15.5519 7.79119 15.2011 7.69602 14.7579 7.69602C14.4568 7.69602 14.2025 7.73864 13.9951 7.82386C13.7877 7.90625 13.6286 8.02131 13.5178 8.16903C13.4099 8.31676 13.3559 8.48438 13.3559 8.67188C13.3502 8.82812 13.3829 8.96449 13.4539 9.08097C13.5278 9.19744 13.6286 9.2983 13.7565 9.38352C13.8843 9.46591 14.032 9.53835 14.1997 9.60085C14.3673 9.66051 14.5462 9.71165 14.7366 9.75426L15.5207 9.94176C15.9014 10.027 16.2508 10.1406 16.569 10.2827C16.8872 10.4247 17.1627 10.5994 17.3957 10.8068C17.6286 11.0142 17.809 11.2585 17.9369 11.5398C18.0675 11.821 18.1343 12.1435 18.1372 12.5071C18.1343 13.0412 17.9979 13.5043 17.7281 13.8963C17.461 14.2855 17.0747 14.5881 16.569 14.804C16.0661 15.017 15.4596 15.1236 14.7494 15.1236C14.0448 15.1236 13.4312 15.0156 12.9085 14.7997C12.3886 14.5838 11.9823 14.2642 11.6897 13.8409C11.3999 13.4148 11.2479 12.8878 11.2337 12.2599H13.0193C13.0391 12.5526 13.1229 12.7969 13.2707 12.9929C13.4212 13.1861 13.6215 13.3324 13.8715 13.4318C14.1244 13.5284 14.4099 13.5767 14.7281 13.5767C15.0406 13.5767 15.3119 13.5312 15.542 13.4403C15.7749 13.3494 15.9553 13.223 16.0832 13.0611C16.211 12.8991 16.2749 12.7131 16.2749 12.5028C16.2749 12.3068 16.2167 12.142 16.1002 12.0085C15.9866 11.875 15.819 11.7614 15.5974 11.6676C15.3786 11.5739 15.1102 11.4886 14.792 11.4119L13.8417 11.1733C13.1059 10.9943 12.5249 10.7145 12.0988 10.3338C11.6727 9.95312 11.461 9.44034 11.4639 8.79545C11.461 8.26705 11.6016 7.8054 11.8857 7.41051C12.1727 7.01562 12.5661 6.70739 13.0661 6.4858C13.5661 6.2642 14.1343 6.15341 14.7707 6.15341C15.4184 6.15341 15.9837 6.2642 16.4667 6.4858C16.9525 6.70739 17.3303 7.01562 17.6002 7.41051C17.8701 7.8054 18.0093 8.26278 18.0178 8.78267H16.2494ZM19.3783 15V6.27273H21.2234V9.87358H24.9692V6.27273H26.8101V15H24.9692V11.3949H21.2234V15H19.3783Z" fill="white"/>
+            <path d="M43.6696 8.79375C44.1102 8.35313 44.1102 7.64063 43.6696 7.20469C43.2289 6.76875 42.5164 6.76406 42.0805 7.20469L36.8774 12.4078L34.6742 10.2047C34.2336 9.76406 33.5211 9.76406 33.0852 10.2047C32.6492 10.6453 32.6446 11.3578 33.0852 11.7938L36.0852 14.7938C36.5258 15.2344 37.2383 15.2344 37.6742 14.7938L43.6696 8.79375Z" fill="white"/>
+            </svg>
+
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+              <button class="text-[#4F4F4F] hover:text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
+
+          {/* Row 2 - Static data */}
+          <tr>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-normal text-sm text-[#4F4F4F]">
+              The work performed and the results obtained have been adequately documented.
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+            <svg width="58" height="22" viewBox="0 0 58 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.269409" width="57.2436" height="22" rx="8" fill="#E89F51"/>
+            <path d="M11.0279 6.27273H13.3035L15.7069 12.1364H15.8092L18.2126 6.27273H20.4882V15H18.6984V9.3196H18.6259L16.3674 14.9574H15.1487L12.8901 9.2983H12.8177V15H11.0279V6.27273ZM29.7087 9.32812H27.8422C27.8081 9.08665 27.7385 8.87216 27.6334 8.68466C27.5283 8.49432 27.3933 8.33239 27.2286 8.19886C27.0638 8.06534 26.8735 7.96307 26.6575 7.89205C26.4445 7.82102 26.2129 7.78551 25.9629 7.78551C25.5112 7.78551 25.1178 7.89773 24.7825 8.12216C24.4473 8.34375 24.1874 8.66761 24.0027 9.09375C23.8181 9.51705 23.7257 10.0312 23.7257 10.6364C23.7257 11.2585 23.8181 11.7812 24.0027 12.2045C24.1902 12.6278 24.4516 12.9474 24.7868 13.1634C25.122 13.3793 25.5098 13.4872 25.9502 13.4872C26.1973 13.4872 26.426 13.4545 26.6362 13.3892C26.8493 13.3239 27.0382 13.2287 27.203 13.1037C27.3678 12.9759 27.5041 12.821 27.6121 12.6392C27.7229 12.4574 27.7996 12.25 27.8422 12.017L29.7087 12.0256C29.6604 12.4261 29.5397 12.8125 29.3465 13.1847C29.1561 13.554 28.899 13.8849 28.5752 14.1776C28.2541 14.4673 27.8706 14.6974 27.4246 14.8679C26.9814 15.0355 26.48 15.1193 25.9203 15.1193C25.1419 15.1193 24.4459 14.9432 23.8323 14.5909C23.2215 14.2386 22.7385 13.7287 22.3834 13.0611C22.0311 12.3935 21.855 11.5852 21.855 10.6364C21.855 9.68466 22.034 8.875 22.3919 8.20739C22.7499 7.53977 23.2357 7.03125 23.8493 6.68182C24.4629 6.32955 25.1533 6.15341 25.9203 6.15341C26.426 6.15341 26.8948 6.22443 27.3266 6.36648C27.7612 6.50852 28.1462 6.71591 28.4814 6.98864C28.8166 7.25852 29.0894 7.58949 29.2996 7.98153C29.5127 8.37358 29.649 8.82244 29.7087 9.32812Z" fill="white"/>
+            <path d="M47.1825 8.79375C47.6231 8.35313 47.6231 7.64063 47.1825 7.20469C46.7419 6.76875 46.0294 6.76406 45.5934 7.20469L40.3903 12.4078L38.1872 10.2047C37.7466 9.76406 37.0341 9.76406 36.5981 10.2047C36.1622 10.6453 36.1575 11.3578 36.5981 11.7938L39.5981 14.7938C40.0387 15.2344 40.7512 15.2344 41.1872 14.7938L47.1825 8.79375Z" fill="white"/>
+            </svg>
+
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+            <svg width="54" height="22" viewBox="0 0 54 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.75647" width="53.2436" height="22" rx="8" fill="#44916F"/>
+            <path d="M16.2494 8.78267C16.2153 8.43892 16.069 8.17187 15.8104 7.98153C15.5519 7.79119 15.2011 7.69602 14.7579 7.69602C14.4568 7.69602 14.2025 7.73864 13.9951 7.82386C13.7877 7.90625 13.6286 8.02131 13.5178 8.16903C13.4099 8.31676 13.3559 8.48438 13.3559 8.67188C13.3502 8.82812 13.3829 8.96449 13.4539 9.08097C13.5278 9.19744 13.6286 9.2983 13.7565 9.38352C13.8843 9.46591 14.032 9.53835 14.1997 9.60085C14.3673 9.66051 14.5462 9.71165 14.7366 9.75426L15.5207 9.94176C15.9014 10.027 16.2508 10.1406 16.569 10.2827C16.8872 10.4247 17.1627 10.5994 17.3957 10.8068C17.6286 11.0142 17.809 11.2585 17.9369 11.5398C18.0675 11.821 18.1343 12.1435 18.1372 12.5071C18.1343 13.0412 17.9979 13.5043 17.7281 13.8963C17.461 14.2855 17.0747 14.5881 16.569 14.804C16.0661 15.017 15.4596 15.1236 14.7494 15.1236C14.0448 15.1236 13.4312 15.0156 12.9085 14.7997C12.3886 14.5838 11.9823 14.2642 11.6897 13.8409C11.3999 13.4148 11.2479 12.8878 11.2337 12.2599H13.0193C13.0391 12.5526 13.1229 12.7969 13.2707 12.9929C13.4212 13.1861 13.6215 13.3324 13.8715 13.4318C14.1244 13.5284 14.4099 13.5767 14.7281 13.5767C15.0406 13.5767 15.3119 13.5312 15.542 13.4403C15.7749 13.3494 15.9553 13.223 16.0832 13.0611C16.211 12.8991 16.2749 12.7131 16.2749 12.5028C16.2749 12.3068 16.2167 12.142 16.1002 12.0085C15.9866 11.875 15.819 11.7614 15.5974 11.6676C15.3786 11.5739 15.1102 11.4886 14.792 11.4119L13.8417 11.1733C13.1059 10.9943 12.5249 10.7145 12.0988 10.3338C11.6727 9.95312 11.461 9.44034 11.4639 8.79545C11.461 8.26705 11.6016 7.8054 11.8857 7.41051C12.1727 7.01562 12.5661 6.70739 13.0661 6.4858C13.5661 6.2642 14.1343 6.15341 14.7707 6.15341C15.4184 6.15341 15.9837 6.2642 16.4667 6.4858C16.9525 6.70739 17.3303 7.01562 17.6002 7.41051C17.8701 7.8054 18.0093 8.26278 18.0178 8.78267H16.2494ZM19.3783 15V6.27273H21.2234V9.87358H24.9692V6.27273H26.8101V15H24.9692V11.3949H21.2234V15H19.3783Z" fill="white"/>
+            <path d="M43.6696 8.79375C44.1102 8.35313 44.1102 7.64063 43.6696 7.20469C43.2289 6.76875 42.5164 6.76406 42.0805 7.20469L36.8774 12.4078L34.6742 10.2047C34.2336 9.76406 33.5211 9.76406 33.0852 10.2047C32.6492 10.6453 32.6446 11.3578 33.0852 11.7938L36.0852 14.7938C36.5258 15.2344 37.2383 15.2344 37.6742 14.7938L43.6696 8.79375Z" fill="white"/>
+            </svg>
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+              <button class="text-[#4F4F4F] hover:text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
+
+          {/* Row 3 - Static data */}
+          <tr>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-normal text-sm text-[#4F4F4F]">
+              All necessary information has been collected for the presentation and disclosure in the financial
+              statements.
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+              {/* Empty preparation cell */}
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+              {/* Empty review cell */}
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+              <button class="text-[#4F4F4F] hover:text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
+
+          {/* Row 4 - Static data */}
+          <tr>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-normal text-sm text-[#4F4F4F]">
+              Based on audit procedures performed, the above objectives have been met and without any material exception
+              noted.
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+              {/* Empty preparation cell */}
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+              {/* Empty review cell */}
+            </td>
+            <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">
+              <button class="text-[#4F4F4F] hover:text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
