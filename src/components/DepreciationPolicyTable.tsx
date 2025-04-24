@@ -65,43 +65,43 @@ const DepreciationPolicyTable: Component<DepreciationPolicyTableProps> = (props)
           <tr>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#E6E6FA]"
+              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Depreciation Policy;
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#E6E6FA]"
+              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Useful life (Month)
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#E6E6FA]"
+              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Residual value rate
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#E6E6FA]"
+              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Depreciation rate
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#E6E6FA]"
+              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Useful life (Month)
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#E6E6FA]"
+              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Residual value rate
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#E6E6FA]"
+              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Depreciation rate
             </th>
@@ -111,25 +111,25 @@ const DepreciationPolicyTable: Component<DepreciationPolicyTableProps> = (props)
           <For each={props.assets}>
             {(asset) => (
               <tr>
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-[#C0C0C0]">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]">
                   {asset.category}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border border-[#C0C0C0]">
+                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.usefulLife2023}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border border-[#C0C0C0]">
+                <td class="px-6 py-4 whitespace-nowrap text-center text-right text-sm text-{#4F4F4F} border border-[#C0C0C0]">
                   {asset.residualRate2023}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border border-[#C0C0C0]">
+                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.depreciationRate2023}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border border-[#C0C0C0]">
+                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.usefulLife2022}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border border-[#C0C0C0]">
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.residualRate2022}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border border-[#C0C0C0]">
+                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.depreciationRate2022}
                 </td>
               </tr>

@@ -426,9 +426,9 @@ const DepreciationSummary: Component = () => {
   }
 
   return (
-    <div class="relative left-80 bg-[#F3F4F6] max-w-6xl mt-4 mb-4">
-    <div class="max-w-7xl mx-auto p-4 space-y-6">
-      <div class="border border-[#F9FAFB] rounded-lg p-4 bg-white shadow-lg">
+    <div class="w-[1290px] h-[2258px] absolute p-2 gap-[15px]">
+    <div class="max-w-7xl mx-auto p-4 space-y-4">
+      <div class="w-auto h-auto border border-[#F9FAFB] rounded-lg p-4 bg-white shadow-lg">
         <div class="flex justify-between items-center mb-4">
           <div class="flex items-center space-x-2">
 
@@ -463,7 +463,7 @@ const DepreciationSummary: Component = () => {
           <ConclusionsTable  />
         </div>
 
-        <div class="space-y-6">
+        <div class="space-y-4">
          
         <div class="border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg">
           <h2 class="text-xl font-bold py-4">Depreciation Policy</h2>
@@ -482,8 +482,8 @@ const DepreciationSummary: Component = () => {
           <DepreciationAllocationTable monthlyAllocations={monthlyAllocations} totalRow={allocationTotal} />
           </div>
           <div class="border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg">
-          <h2 class="text-xl font-bold mt-6">Recalculation of Depreciation</h2>
-          <h3 class="text-lg font-medium mb-2">Summary by Category</h3>
+          <h2 class="text-xl text-[#333333] font-bold mt-6">Recalculation of Depreciation</h2>
+          <h3 class="text-lg text-[#333333] font-medium mb-2">Summary by Category</h3>
           <RecalculationTable items={recalculationItems} total={recalculationTotal} />
           </div>
         </div>

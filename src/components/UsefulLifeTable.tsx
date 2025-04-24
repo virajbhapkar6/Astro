@@ -19,24 +19,26 @@ const UsefulLifeTable: Component<UsefulLifeTableProps> = (props) => {
       <table class="min-w-full divide-y divide-gray-200">
         <thead class="bg-[#F3F4F6]">
         <tr class="bg-gray-50">
-            <th scope="col" class="px-6 py-3 border border text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-[#FFFFFF]">
+            <th scope="col" class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider bg-[#FFFFFF]">
               &nbsp;
             </th>
-            <th scope="col" class="px-6 py-3 border border text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-[#FFFFFF]">
+            <th scope="col" class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[[#4F4F4F]] uppercase tracking-wider bg-[#FFFFFF]">
               &nbsp;
             </th>
-            <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Depreciation Policy of the company
-            </th>
+            <th
+              scope="col"
+              colspan="3"
+              class="px-6 py-3 text-center text-xs font-medium text-[#F9FAFB] uppercase tracking-wider border border bg-[#777695]"
+            > Depreciation policy of the company</th>
           </tr>
           <tr>
-            <th scope="col" class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               Fixed assets
             </th>
-            <th scope="col" class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-6 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               Useful life (Month)
             </th>
-            <th scope="col" class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-6 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               Useful life
             </th>
             <th
@@ -50,10 +52,10 @@ const UsefulLifeTable: Component<UsefulLifeTableProps> = (props) => {
           <For each={props.assets}>
             {(asset) => (
               <tr>
-                <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900">{asset.asset}</td>
-                <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500">{asset.usefulLifeMonth}</td>
-                <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500">{asset.usefulLife}</td>
-                <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500 text-center">{asset.agreeWithBook}</td>
+                <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">{asset.asset}</td>
+                <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">{asset.usefulLifeMonth}</td>
+                <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">{asset.usefulLife}</td>
+                <td class="px-6 py-4 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">{asset.agreeWithBook}</td>
               </tr>
             )}
           </For>

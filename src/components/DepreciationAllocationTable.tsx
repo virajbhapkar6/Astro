@@ -31,123 +31,160 @@ type DepreciationAllocationTableProps = {
 
 const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> = (props) => {
   return (
-    <div class="overflow-hidden border border-[#C0C0C0]-200 rounded-lg">
+    <div class="overflow-hidden border border-[#C0C0C0] rounded-lg">
       <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
+        <thead class="bg-[#F3F4F6]">
           <tr>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Expenses
+            <th scope="row" rowspan="2" class="flex  item-center gap-2 px-4 py-3 border-b-0 text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+              Expenses 
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66763 3.74992C6.49105 3.74988 6.32171 3.68401 6.19687 3.56679L4.00418 1.50864L1.8115 3.56679C1.75007 3.62648 1.6766 3.6741 1.59536 3.70685C1.51412 3.73961 1.42675 3.75685 1.33834 3.75757C1.24992 3.75829 1.16224 3.74248 1.08041 3.71105C0.998578 3.67963 0.924233 3.63322 0.861714 3.57454C0.799194 3.51585 0.749752 3.44607 0.716271 3.36926C0.682791 3.29245 0.665944 3.21015 0.666712 3.12716C0.66748 3.04417 0.685849 2.96216 0.720746 2.8859C0.755644 2.80965 0.80637 2.74068 0.869967 2.68303L3.53342 0.182994C3.65829 0.0658231 3.82762 0 4.00418 0C4.18075 0 4.35008 0.0658231 4.47495 0.182994L7.1384 2.68303C7.23149 2.77044 7.29489 2.88179 7.32057 3.00301C7.34625 3.12423 7.33306 3.24988 7.28268 3.36407C7.23229 3.47826 7.14697 3.57586 7.03749 3.64454C6.92802 3.71322 6.79931 3.74989 6.66763 3.74992Z" fill="#4F4F4F"/>
+            <path d="M4.00418 10C3.8276 9.99996 3.65826 9.93409 3.53342 9.81687L0.869967 7.31684C0.80637 7.25918 0.755644 7.19022 0.720746 7.11396C0.685849 7.03771 0.66748 6.9557 0.666712 6.87271C0.665944 6.78972 0.682791 6.70742 0.716271 6.63061C0.749752 6.5538 0.799194 6.48401 0.861714 6.42533C0.924233 6.36665 0.998578 6.32024 1.08041 6.28881C1.16224 6.25739 1.24992 6.24157 1.33834 6.24229C1.42675 6.24301 1.51412 6.26026 1.59536 6.29301C1.6766 6.32577 1.75007 6.37338 1.8115 6.43308L4.00418 8.49123L6.19687 6.43308C6.32245 6.31923 6.49065 6.25623 6.66524 6.25765C6.83982 6.25908 7.00683 6.32481 7.13029 6.44069C7.25374 6.55657 7.32377 6.71333 7.32529 6.87721C7.32681 7.04108 7.25969 7.19896 7.1384 7.31684L4.47495 9.81687C4.3501 9.93409 4.18077 9.99996 4.00418 10Z" fill="#4F4F4F"/>
+            </svg>
             </th>
             <th
               scope="col"
               colspan="4"
-              class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider bg-indigo-50"
+              class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
             >
               Depreciation per month
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               Total
+            
             </th>
             <th
               scope="col"
               colspan="4"
-              class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider bg-indigo-50"
+              class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
             >
               Allocation % for each category
             </th>
           </tr>
-          <tr class="bg-gray-50">
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          <tr class="bg-[#F3F4F6]">
+            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               &nbsp;
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="flex gap-2 px-4 py-4 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               Overhead
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66763 3.74992C6.49105 3.74988 6.32171 3.68401 6.19687 3.56679L4.00418 1.50864L1.8115 3.56679C1.75007 3.62648 1.6766 3.6741 1.59536 3.70685C1.51412 3.73961 1.42675 3.75685 1.33834 3.75757C1.24992 3.75829 1.16224 3.74248 1.08041 3.71105C0.998578 3.67963 0.924233 3.63322 0.861714 3.57454C0.799194 3.51585 0.749752 3.44607 0.716271 3.36926C0.682791 3.29245 0.665944 3.21015 0.666712 3.12716C0.66748 3.04417 0.685849 2.96216 0.720746 2.8859C0.755644 2.80965 0.80637 2.74068 0.869967 2.68303L3.53342 0.182994C3.65829 0.0658231 3.82762 0 4.00418 0C4.18075 0 4.35008 0.0658231 4.47495 0.182994L7.1384 2.68303C7.23149 2.77044 7.29489 2.88179 7.32057 3.00301C7.34625 3.12423 7.33306 3.24988 7.28268 3.36407C7.23229 3.47826 7.14697 3.57586 7.03749 3.64454C6.92802 3.71322 6.79931 3.74989 6.66763 3.74992Z" fill="#4F4F4F"/>
+            <path d="M4.00418 10C3.8276 9.99996 3.65826 9.93409 3.53342 9.81687L0.869967 7.31684C0.80637 7.25918 0.755644 7.19022 0.720746 7.11396C0.685849 7.03771 0.66748 6.9557 0.666712 6.87271C0.665944 6.78972 0.682791 6.70742 0.716271 6.63061C0.749752 6.5538 0.799194 6.48401 0.861714 6.42533C0.924233 6.36665 0.998578 6.32024 1.08041 6.28881C1.16224 6.25739 1.24992 6.24157 1.33834 6.24229C1.42675 6.24301 1.51412 6.26026 1.59536 6.29301C1.6766 6.32577 1.75007 6.37338 1.8115 6.43308L4.00418 8.49123L6.19687 6.43308C6.32245 6.31923 6.49065 6.25623 6.66524 6.25765C6.83982 6.25908 7.00683 6.32481 7.13029 6.44069C7.25374 6.55657 7.32377 6.71333 7.32529 6.87721C7.32681 7.04108 7.25969 7.19896 7.1384 7.31684L4.47495 9.81687C4.3501 9.93409 4.18077 9.99996 4.00418 10Z" fill="#4F4F4F"/>
+            </svg>
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               Selling
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66763 3.74992C6.49105 3.74988 6.32171 3.68401 6.19687 3.56679L4.00418 1.50864L1.8115 3.56679C1.75007 3.62648 1.6766 3.6741 1.59536 3.70685C1.51412 3.73961 1.42675 3.75685 1.33834 3.75757C1.24992 3.75829 1.16224 3.74248 1.08041 3.71105C0.998578 3.67963 0.924233 3.63322 0.861714 3.57454C0.799194 3.51585 0.749752 3.44607 0.716271 3.36926C0.682791 3.29245 0.665944 3.21015 0.666712 3.12716C0.66748 3.04417 0.685849 2.96216 0.720746 2.8859C0.755644 2.80965 0.80637 2.74068 0.869967 2.68303L3.53342 0.182994C3.65829 0.0658231 3.82762 0 4.00418 0C4.18075 0 4.35008 0.0658231 4.47495 0.182994L7.1384 2.68303C7.23149 2.77044 7.29489 2.88179 7.32057 3.00301C7.34625 3.12423 7.33306 3.24988 7.28268 3.36407C7.23229 3.47826 7.14697 3.57586 7.03749 3.64454C6.92802 3.71322 6.79931 3.74989 6.66763 3.74992Z" fill="#4F4F4F"/>
+            <path d="M4.00418 10C3.8276 9.99996 3.65826 9.93409 3.53342 9.81687L0.869967 7.31684C0.80637 7.25918 0.755644 7.19022 0.720746 7.11396C0.685849 7.03771 0.66748 6.9557 0.666712 6.87271C0.665944 6.78972 0.682791 6.70742 0.716271 6.63061C0.749752 6.5538 0.799194 6.48401 0.861714 6.42533C0.924233 6.36665 0.998578 6.32024 1.08041 6.28881C1.16224 6.25739 1.24992 6.24157 1.33834 6.24229C1.42675 6.24301 1.51412 6.26026 1.59536 6.29301C1.6766 6.32577 1.75007 6.37338 1.8115 6.43308L4.00418 8.49123L6.19687 6.43308C6.32245 6.31923 6.49065 6.25623 6.66524 6.25765C6.83982 6.25908 7.00683 6.32481 7.13029 6.44069C7.25374 6.55657 7.32377 6.71333 7.32529 6.87721C7.32681 7.04108 7.25969 7.19896 7.1384 7.31684L4.47495 9.81687C4.3501 9.93409 4.18077 9.99996 4.00418 10Z" fill="#4F4F4F"/>
+            </svg>
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               G&A
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66763 3.74992C6.49105 3.74988 6.32171 3.68401 6.19687 3.56679L4.00418 1.50864L1.8115 3.56679C1.75007 3.62648 1.6766 3.6741 1.59536 3.70685C1.51412 3.73961 1.42675 3.75685 1.33834 3.75757C1.24992 3.75829 1.16224 3.74248 1.08041 3.71105C0.998578 3.67963 0.924233 3.63322 0.861714 3.57454C0.799194 3.51585 0.749752 3.44607 0.716271 3.36926C0.682791 3.29245 0.665944 3.21015 0.666712 3.12716C0.66748 3.04417 0.685849 2.96216 0.720746 2.8859C0.755644 2.80965 0.80637 2.74068 0.869967 2.68303L3.53342 0.182994C3.65829 0.0658231 3.82762 0 4.00418 0C4.18075 0 4.35008 0.0658231 4.47495 0.182994L7.1384 2.68303C7.23149 2.77044 7.29489 2.88179 7.32057 3.00301C7.34625 3.12423 7.33306 3.24988 7.28268 3.36407C7.23229 3.47826 7.14697 3.57586 7.03749 3.64454C6.92802 3.71322 6.79931 3.74989 6.66763 3.74992Z" fill="#4F4F4F"/>
+            <path d="M4.00418 10C3.8276 9.99996 3.65826 9.93409 3.53342 9.81687L0.869967 7.31684C0.80637 7.25918 0.755644 7.19022 0.720746 7.11396C0.685849 7.03771 0.66748 6.9557 0.666712 6.87271C0.665944 6.78972 0.682791 6.70742 0.716271 6.63061C0.749752 6.5538 0.799194 6.48401 0.861714 6.42533C0.924233 6.36665 0.998578 6.32024 1.08041 6.28881C1.16224 6.25739 1.24992 6.24157 1.33834 6.24229C1.42675 6.24301 1.51412 6.26026 1.59536 6.29301C1.6766 6.32577 1.75007 6.37338 1.8115 6.43308L4.00418 8.49123L6.19687 6.43308C6.32245 6.31923 6.49065 6.25623 6.66524 6.25765C6.83982 6.25908 7.00683 6.32481 7.13029 6.44069C7.25374 6.55657 7.32377 6.71333 7.32529 6.87721C7.32681 7.04108 7.25969 7.19896 7.1384 7.31684L4.47495 9.81687C4.3501 9.93409 4.18077 9.99996 4.00418 10Z" fill="#4F4F4F"/>
+            </svg>
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               R&D
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66763 3.74992C6.49105 3.74988 6.32171 3.68401 6.19687 3.56679L4.00418 1.50864L1.8115 3.56679C1.75007 3.62648 1.6766 3.6741 1.59536 3.70685C1.51412 3.73961 1.42675 3.75685 1.33834 3.75757C1.24992 3.75829 1.16224 3.74248 1.08041 3.71105C0.998578 3.67963 0.924233 3.63322 0.861714 3.57454C0.799194 3.51585 0.749752 3.44607 0.716271 3.36926C0.682791 3.29245 0.665944 3.21015 0.666712 3.12716C0.66748 3.04417 0.685849 2.96216 0.720746 2.8859C0.755644 2.80965 0.80637 2.74068 0.869967 2.68303L3.53342 0.182994C3.65829 0.0658231 3.82762 0 4.00418 0C4.18075 0 4.35008 0.0658231 4.47495 0.182994L7.1384 2.68303C7.23149 2.77044 7.29489 2.88179 7.32057 3.00301C7.34625 3.12423 7.33306 3.24988 7.28268 3.36407C7.23229 3.47826 7.14697 3.57586 7.03749 3.64454C6.92802 3.71322 6.79931 3.74989 6.66763 3.74992Z" fill="#4F4F4F"/>
+            <path d="M4.00418 10C3.8276 9.99996 3.65826 9.93409 3.53342 9.81687L0.869967 7.31684C0.80637 7.25918 0.755644 7.19022 0.720746 7.11396C0.685849 7.03771 0.66748 6.9557 0.666712 6.87271C0.665944 6.78972 0.682791 6.70742 0.716271 6.63061C0.749752 6.5538 0.799194 6.48401 0.861714 6.42533C0.924233 6.36665 0.998578 6.32024 1.08041 6.28881C1.16224 6.25739 1.24992 6.24157 1.33834 6.24229C1.42675 6.24301 1.51412 6.26026 1.59536 6.29301C1.6766 6.32577 1.75007 6.37338 1.8115 6.43308L4.00418 8.49123L6.19687 6.43308C6.32245 6.31923 6.49065 6.25623 6.66524 6.25765C6.83982 6.25908 7.00683 6.32481 7.13029 6.44069C7.25374 6.55657 7.32377 6.71333 7.32529 6.87721C7.32681 7.04108 7.25969 7.19896 7.1384 7.31684L4.47495 9.81687C4.3501 9.93409 4.18077 9.99996 4.00418 10Z" fill="#4F4F4F"/>
+            </svg>
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               &nbsp;
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               Overhead
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66763 3.74992C6.49105 3.74988 6.32171 3.68401 6.19687 3.56679L4.00418 1.50864L1.8115 3.56679C1.75007 3.62648 1.6766 3.6741 1.59536 3.70685C1.51412 3.73961 1.42675 3.75685 1.33834 3.75757C1.24992 3.75829 1.16224 3.74248 1.08041 3.71105C0.998578 3.67963 0.924233 3.63322 0.861714 3.57454C0.799194 3.51585 0.749752 3.44607 0.716271 3.36926C0.682791 3.29245 0.665944 3.21015 0.666712 3.12716C0.66748 3.04417 0.685849 2.96216 0.720746 2.8859C0.755644 2.80965 0.80637 2.74068 0.869967 2.68303L3.53342 0.182994C3.65829 0.0658231 3.82762 0 4.00418 0C4.18075 0 4.35008 0.0658231 4.47495 0.182994L7.1384 2.68303C7.23149 2.77044 7.29489 2.88179 7.32057 3.00301C7.34625 3.12423 7.33306 3.24988 7.28268 3.36407C7.23229 3.47826 7.14697 3.57586 7.03749 3.64454C6.92802 3.71322 6.79931 3.74989 6.66763 3.74992Z" fill="#4F4F4F"/>
+            <path d="M4.00418 10C3.8276 9.99996 3.65826 9.93409 3.53342 9.81687L0.869967 7.31684C0.80637 7.25918 0.755644 7.19022 0.720746 7.11396C0.685849 7.03771 0.66748 6.9557 0.666712 6.87271C0.665944 6.78972 0.682791 6.70742 0.716271 6.63061C0.749752 6.5538 0.799194 6.48401 0.861714 6.42533C0.924233 6.36665 0.998578 6.32024 1.08041 6.28881C1.16224 6.25739 1.24992 6.24157 1.33834 6.24229C1.42675 6.24301 1.51412 6.26026 1.59536 6.29301C1.6766 6.32577 1.75007 6.37338 1.8115 6.43308L4.00418 8.49123L6.19687 6.43308C6.32245 6.31923 6.49065 6.25623 6.66524 6.25765C6.83982 6.25908 7.00683 6.32481 7.13029 6.44069C7.25374 6.55657 7.32377 6.71333 7.32529 6.87721C7.32681 7.04108 7.25969 7.19896 7.1384 7.31684L4.47495 9.81687C4.3501 9.93409 4.18077 9.99996 4.00418 10Z" fill="#4F4F4F"/>
+            </svg>
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               Selling
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66763 3.74992C6.49105 3.74988 6.32171 3.68401 6.19687 3.56679L4.00418 1.50864L1.8115 3.56679C1.75007 3.62648 1.6766 3.6741 1.59536 3.70685C1.51412 3.73961 1.42675 3.75685 1.33834 3.75757C1.24992 3.75829 1.16224 3.74248 1.08041 3.71105C0.998578 3.67963 0.924233 3.63322 0.861714 3.57454C0.799194 3.51585 0.749752 3.44607 0.716271 3.36926C0.682791 3.29245 0.665944 3.21015 0.666712 3.12716C0.66748 3.04417 0.685849 2.96216 0.720746 2.8859C0.755644 2.80965 0.80637 2.74068 0.869967 2.68303L3.53342 0.182994C3.65829 0.0658231 3.82762 0 4.00418 0C4.18075 0 4.35008 0.0658231 4.47495 0.182994L7.1384 2.68303C7.23149 2.77044 7.29489 2.88179 7.32057 3.00301C7.34625 3.12423 7.33306 3.24988 7.28268 3.36407C7.23229 3.47826 7.14697 3.57586 7.03749 3.64454C6.92802 3.71322 6.79931 3.74989 6.66763 3.74992Z" fill="#4F4F4F"/>
+            <path d="M4.00418 10C3.8276 9.99996 3.65826 9.93409 3.53342 9.81687L0.869967 7.31684C0.80637 7.25918 0.755644 7.19022 0.720746 7.11396C0.685849 7.03771 0.66748 6.9557 0.666712 6.87271C0.665944 6.78972 0.682791 6.70742 0.716271 6.63061C0.749752 6.5538 0.799194 6.48401 0.861714 6.42533C0.924233 6.36665 0.998578 6.32024 1.08041 6.28881C1.16224 6.25739 1.24992 6.24157 1.33834 6.24229C1.42675 6.24301 1.51412 6.26026 1.59536 6.29301C1.6766 6.32577 1.75007 6.37338 1.8115 6.43308L4.00418 8.49123L6.19687 6.43308C6.32245 6.31923 6.49065 6.25623 6.66524 6.25765C6.83982 6.25908 7.00683 6.32481 7.13029 6.44069C7.25374 6.55657 7.32377 6.71333 7.32529 6.87721C7.32681 7.04108 7.25969 7.19896 7.1384 7.31684L4.47495 9.81687C4.3501 9.93409 4.18077 9.99996 4.00418 10Z" fill="#4F4F4F"/>
+            </svg>
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               G&A
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66763 3.74992C6.49105 3.74988 6.32171 3.68401 6.19687 3.56679L4.00418 1.50864L1.8115 3.56679C1.75007 3.62648 1.6766 3.6741 1.59536 3.70685C1.51412 3.73961 1.42675 3.75685 1.33834 3.75757C1.24992 3.75829 1.16224 3.74248 1.08041 3.71105C0.998578 3.67963 0.924233 3.63322 0.861714 3.57454C0.799194 3.51585 0.749752 3.44607 0.716271 3.36926C0.682791 3.29245 0.665944 3.21015 0.666712 3.12716C0.66748 3.04417 0.685849 2.96216 0.720746 2.8859C0.755644 2.80965 0.80637 2.74068 0.869967 2.68303L3.53342 0.182994C3.65829 0.0658231 3.82762 0 4.00418 0C4.18075 0 4.35008 0.0658231 4.47495 0.182994L7.1384 2.68303C7.23149 2.77044 7.29489 2.88179 7.32057 3.00301C7.34625 3.12423 7.33306 3.24988 7.28268 3.36407C7.23229 3.47826 7.14697 3.57586 7.03749 3.64454C6.92802 3.71322 6.79931 3.74989 6.66763 3.74992Z" fill="#4F4F4F"/>
+            <path d="M4.00418 10C3.8276 9.99996 3.65826 9.93409 3.53342 9.81687L0.869967 7.31684C0.80637 7.25918 0.755644 7.19022 0.720746 7.11396C0.685849 7.03771 0.66748 6.9557 0.666712 6.87271C0.665944 6.78972 0.682791 6.70742 0.716271 6.63061C0.749752 6.5538 0.799194 6.48401 0.861714 6.42533C0.924233 6.36665 0.998578 6.32024 1.08041 6.28881C1.16224 6.25739 1.24992 6.24157 1.33834 6.24229C1.42675 6.24301 1.51412 6.26026 1.59536 6.29301C1.6766 6.32577 1.75007 6.37338 1.8115 6.43308L4.00418 8.49123L6.19687 6.43308C6.32245 6.31923 6.49065 6.25623 6.66524 6.25765C6.83982 6.25908 7.00683 6.32481 7.13029 6.44069C7.25374 6.55657 7.32377 6.71333 7.32529 6.87721C7.32681 7.04108 7.25969 7.19896 7.1384 7.31684L4.47495 9.81687C4.3501 9.93409 4.18077 9.99996 4.00418 10Z" fill="#4F4F4F"/>
+            </svg>
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
               R&D
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.66763 3.74992C6.49105 3.74988 6.32171 3.68401 6.19687 3.56679L4.00418 1.50864L1.8115 3.56679C1.75007 3.62648 1.6766 3.6741 1.59536 3.70685C1.51412 3.73961 1.42675 3.75685 1.33834 3.75757C1.24992 3.75829 1.16224 3.74248 1.08041 3.71105C0.998578 3.67963 0.924233 3.63322 0.861714 3.57454C0.799194 3.51585 0.749752 3.44607 0.716271 3.36926C0.682791 3.29245 0.665944 3.21015 0.666712 3.12716C0.66748 3.04417 0.685849 2.96216 0.720746 2.8859C0.755644 2.80965 0.80637 2.74068 0.869967 2.68303L3.53342 0.182994C3.65829 0.0658231 3.82762 0 4.00418 0C4.18075 0 4.35008 0.0658231 4.47495 0.182994L7.1384 2.68303C7.23149 2.77044 7.29489 2.88179 7.32057 3.00301C7.34625 3.12423 7.33306 3.24988 7.28268 3.36407C7.23229 3.47826 7.14697 3.57586 7.03749 3.64454C6.92802 3.71322 6.79931 3.74989 6.66763 3.74992Z" fill="#4F4F4F"/>
+            <path d="M4.00418 10C3.8276 9.99996 3.65826 9.93409 3.53342 9.81687L0.869967 7.31684C0.80637 7.25918 0.755644 7.19022 0.720746 7.11396C0.685849 7.03771 0.66748 6.9557 0.666712 6.87271C0.665944 6.78972 0.682791 6.70742 0.716271 6.63061C0.749752 6.5538 0.799194 6.48401 0.861714 6.42533C0.924233 6.36665 0.998578 6.32024 1.08041 6.28881C1.16224 6.25739 1.24992 6.24157 1.33834 6.24229C1.42675 6.24301 1.51412 6.26026 1.59536 6.29301C1.6766 6.32577 1.75007 6.37338 1.8115 6.43308L4.00418 8.49123L6.19687 6.43308C6.32245 6.31923 6.49065 6.25623 6.66524 6.25765C6.83982 6.25908 7.00683 6.32481 7.13029 6.44069C7.25374 6.55657 7.32377 6.71333 7.32529 6.87721C7.32681 7.04108 7.25969 7.19896 7.1384 7.31684L4.47495 9.81687C4.3501 9.93409 4.18077 9.99996 4.00418 10Z" fill="#4F4F4F"/>
+            </svg>
             </th>
           </tr>
         </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
+        <tbody class="bg-[#FFFFFF] divide-y divide-gray-200">
           <For each={props.monthlyAllocations}>
             {(allocation) => (
               <tr>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900">{allocation.month}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500 text-center">{allocation.overhead}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500 text-center">{allocation.selling}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500 text-center">{allocation.gAndA}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500 text-center">{allocation.rAndD}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500 text-center">{allocation.total}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0]whitespace-nowrap text-sm text-gray-500 text-center">
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] bg-[#F3F4F6]">{allocation.month}</td>
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{allocation.overhead}</td>
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{allocation.selling}</td>
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{allocation.gAndA}</td>
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{allocation.rAndD}</td>
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{allocation.total}</td>
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
                   {allocation.overheadPercent}
                 </td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500 text-center">
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
                   {allocation.sellingPercent}
                 </td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500 text-center">{allocation.gAndAPercent}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-gray-500 text-center">{allocation.rAndDPercent}</td>
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{allocation.gAndAPercent}</td>
+                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{allocation.rAndDPercent}</td>
               </tr>
             )}
           </For>
-          <tr class="bg-indigo-100 font-medium">
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900">Total</td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900 text-center">
+          <tr class="bg-[#F3F4F6] font-medium">
+            <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-[#F9FAFB] bg-[#777695]">Total</td>
+            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.totalRow.overhead}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900 text-center">
+            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.totalRow.selling}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900 text-center">
+            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.totalRow.gAndA}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900 text-center">
+            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.totalRow.rAndD}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900 text-center">
+            <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-[#F9FAFB] text-right bg-[#777695]">
               {props.totalRow.total}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900 text-center">
+            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.totalRow.overheadPercent}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900 text-center">
+            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.totalRow.sellingPercent}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900 text-center">
+            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.totalRow.gAndAPercent}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-gray-900 text-center">
+            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.totalRow.rAndDPercent}
             </td>
           </tr>
         </tbody>
-        <tfoot class="bg-white">
+        <tfoot class="bg-[#FFFFFF]">
           <tr>
             <td class="px-4 py-2 text-center"></td>
-            <td class="px-4 py-2 text-center text-red-500 font-medium">GL</td>
-            <td class="px-4 py-2 text-center text-red-500 font-medium">GL</td>
-            <td class="px-4 py-2 text-center text-red-500 font-medium">GL</td>
-            <td class="px-4 py-2 text-center text-red-500 font-medium">GL</td>
+            <td class="px-4 py-2 text-center text-[#CB4E4E] font-medium">GL</td>
+            <td class="px-4 py-2 text-center text-[#CB4E4E] font-medium">GL</td>
+            <td class="px-4 py-2 text-center text-[#CB4E4E] font-medium">GL</td>
+            <td class="px-4 py-2 text-center text-[#CB4E4E] font-medium">GL</td>
             <td class="px-4 py-2 text-center"></td>
             <td class="px-4 py-2 text-center"></td>
             <td class="px-4 py-2 text-center"></td>

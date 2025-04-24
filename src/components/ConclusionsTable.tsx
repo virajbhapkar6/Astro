@@ -8,25 +8,25 @@ const ConclusionsTable: Component = () => {
           <tr>
             <th
               scope="col"
-              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
+              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-semibold text-[#4F4F4F] uppercase tracking-wider height: 30px"
             >
               Conclusions
             </th>
             <th
               scope="col"
-              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
+              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider height: 30px"
             >
               Preparation
             </th>
             <th
               scope="col"
-              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
+              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider height: 30px"
             >
               Review
             </th>
             <th
               scope="col"
-              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider"
+              class="px-6 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider height: 30px"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path
