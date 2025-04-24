@@ -17,20 +17,20 @@ type DepreciationPolicyTableProps = {
 
 const DepreciationPolicyTable: Component<DepreciationPolicyTableProps> = (props) => {
   return (
-    <div class="overflow-hidden border border-[#C0C0C0] rounded-lg">
-      <table class="min-w-full divide-y divide-[#C0C0C0]">
+    <div class="rounded-lg">
+      <table class="min-w-full divide-y divide-[#C0C0C0] w-[1218px] h-[213px]">
         <thead>
           <tr>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#F9FAFB] uppercase tracking-wider border border-[#C0C0C0] bg-white"
+              class="p-[4px] text-left text-xs font-medium text-[#F9FAFB]  border border-[#C0C0C0] bg-white"
             >
               
             </th>
             <th
               scope="col"
               colspan="3"
-              class="px-6 py-3 text-center text-xs font-medium text-[#F9FAFB] uppercase tracking-wider border border-[#C0C0C0] bg-[#777695]"
+              class="p-[4px] text-center text-xs font-medium text-[#F9FAFB]  border border-[#C0C0C0] bg-[#777695]"
             >
               2023
              
@@ -38,7 +38,7 @@ const DepreciationPolicyTable: Component<DepreciationPolicyTableProps> = (props)
             <th
               scope="col"
               colspan="3"
-              class="px-6 py-3 text-center text-xs font-medium text-[#F9FAFB] uppercase tracking-wider border border-[#C0C0C0] bg-[#777695]"
+              class="p-[4px] text-center text-xs font-medium text-[#F9FAFB]  border border-[#C0C0C0] bg-[#777695]"
             >
               2022
               
@@ -47,61 +47,61 @@ const DepreciationPolicyTable: Component<DepreciationPolicyTableProps> = (props)
           <tr>
           <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#F9FAFB] uppercase tracking-wider border border-[#C0C0C0]"
+              class="p-[4px] text-left text-xs font-medium text-[#F9FAFB]  border border-[#C0C0C0]"
             >
             
             </th>
           <th
               scope="col"
               colspan="3"
-              class="px-6 py-3 text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#E6E6FA]"
+              class="p-[4px] text-center text-xs font-medium text-[#4F4F4F]  border border-[#C0C0C0] bg-[#E6E6FA]"
             > Straight-line method</th>
             <th
               scope="col"
               colspan="3"
-              class="px-6 py-3 text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#E6E6FA]"
+              class="p-[4px] text-center text-xs font-medium text-[#4F4F4F]  border border-[#C0C0C0] bg-[#E6E6FA]"
             > Straight-line method</th>
           </tr>
           <tr>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
+              class="p-[4px] text-left text-xs font-medium text-[#4F4F4F]  border border-[#C0C0C0] bg-[#F3F4F6]"
             >
-              Depreciation Policy;
+              Depreciation Policy
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
+              class="p-[4px] text-center text-xs font-medium text-[#4F4F4F]  border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Useful life (Month)
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
+              class="p-[4px] text-center text-xs font-medium text-[#4F4F4F]  border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Residual value rate
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
+              class="p-[4px] text-center text-xs font-medium text-[#4F4F4F]  border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Depreciation rate
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
+              class="p-[4px] text-center text-xs font-medium text-[#4F4F4F]  border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Useful life (Month)
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
+              class="p-[4px] text-center text-xs font-medium text-[#4F4F4F]  border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Residual value rate
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider border border-[#C0C0C0] bg-[#F3F4F6]"
+              class="p-[4px] text-center text-xs font-medium text-[#4F4F4F]  border border-[#C0C0C0] bg-[#F3F4F6]"
             >
               Depreciation rate
             </th>
@@ -111,25 +111,25 @@ const DepreciationPolicyTable: Component<DepreciationPolicyTableProps> = (props)
           <For each={props.assets}>
             {(asset) => (
               <tr>
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]">
+                <td class="p-[4px] whitespace-nowrap text-sm font-medium text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]">
                   {asset.category}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
+                <td class="p-[4px] whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.usefulLife2023}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-center text-right text-sm text-{#4F4F4F} border border-[#C0C0C0]">
+                <td class="p-[4px] whitespace-nowrap text-center text-right text-sm text-{#4F4F4F} border border-[#C0C0C0]">
                   {asset.residualRate2023}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
+                <td class="p-[4px] whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.depreciationRate2023}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
+                <td class="p-[4px] whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.usefulLife2022}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-[#4F4F4F] border border-[#C0C0C0]">
+                <td class="p-[4px] whitespace-nowrap text-right text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.residualRate2022}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
+                <td class="p-[4px] whitespace-nowrap text-center text-sm text-[#4F4F4F] border border-[#C0C0C0]">
                   {asset.depreciationRate2022}
                 </td>
               </tr>

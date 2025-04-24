@@ -32,78 +32,78 @@ type RecalculationTableProps = {
 
 const RecalculationTable: Component<RecalculationTableProps> = (props) => {
   return (
-    <div class="overflow-x-auto">
-      <table class="min-w-auto divide-y divide-gray-200">
-        <thead class="bg-[#FFFFFF]">
+    <div class="w-[1218px] h-[293px] ">
+      <table class=" divide-y divide-gray-200">
+        <thead class="bg-[#FFFFFF] ">
           <tr>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[149px] h-[30px] border border-[#C0C0C0] text-xs  text-[#4F4F4F]  ">
             &nbsp;
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
-            &nbsp;
-            </th>
-            <th
-              scope="col"
-              colspan="2"
-              class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider bg-[#E6E6FA]"
-            >
-              Depreciation in the current period
-            </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
-            &nbsp;
-            </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs  text-[#4F4F4F]  ">
             &nbsp;
             </th>
             <th
               scope="col"
               colspan="2"
-              class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider bg-[#E6E6FA]"
+              class="w-[227.32px] h-[30px]  border border-[#C0C0C0] text-xs  text-[#4F4F4F]   bg-[#E6E6FA]"
             >
               Depreciation in the current period
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0] text-xs  text-[#4F4F4F]  ">
             &nbsp;
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs  text-[#4F4F4F]  ">
             &nbsp;
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th
+              scope="col"
+              colspan="2"
+              class="w-[217.86px] h-[30px]  border border-[#C0C0C0] text-xs  text-[#4F4F4F]   bg-[#E6E6FA]"
+            >
+              Depreciation in the current period
+            </th>
+            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs font-medium text-[#4F4F4F]  ">
+            &nbsp;
+            </th>
+            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs font-medium text-[#4F4F4F]  ">
+            &nbsp;
+            </th>
+            <th scope="col" class="w-[61px] h-[30px]  border border-[#C0C0C0]  text-xs font-medium text-[#4F4F4F]  ">
             &nbsp;
             </th>
           </tr>
           <tr class="bg-[#F9FAFB]">
-          <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+          <th scope="col" class="w-[149px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Category of assets
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Closing balance in original cost
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Expected depreciation expense
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Actual depreciation expense
-            </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            </th> 
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Difference
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Result
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[104.7px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Expected accumulated DEPR expense
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Actual accumulated DEPR
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Difference
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Result
             </th>
-            <th scope="col" class="px-4 py-3 border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] uppercase tracking-wider">
+            <th scope="col" class="w-[61px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
               Notes
             </th>
           </tr>
@@ -112,23 +112,23 @@ const RecalculationTable: Component<RecalculationTableProps> = (props) => {
           <For each={props.items}>
             {(item) => (
               <tr>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F]">{item.category}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">{item.closingBalance}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">
+                <td class="w-[149px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">{item.category}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.closingBalance}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
                   {item.expectedDepreciation}
                 </td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">{item.actualDepreciation}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">{item.difference}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">{item.result}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.actualDepreciation}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.difference}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.result}</td>
+                <td class="w-[104.7px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
                   {item.expectedAccumulated}
                 </td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">{item.actualAccumulated}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.actualAccumulated}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
                   {item.differenceAccumulated}
                 </td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">{item.resultAccumulated}</td>
-                <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.resultAccumulated}</td>
+                <td class="w-[61px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
                   {item.notes && (
                     <svg width="31" height="27" viewBox="0 0 31 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_6609_10535)">
@@ -157,33 +157,33 @@ const RecalculationTable: Component<RecalculationTableProps> = (props) => {
             )}
           </For>
           <tr class="bg-gray-50 font-medium">
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F]">Total</td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F]">{props.total.closingBalance}</td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-center">
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F]">Total</td>
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">{props.total.closingBalance}</td>
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.total.expectedDepreciation}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-center">
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.total.actualDepreciation}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-center">
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.total.difference}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-center">
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.total.result}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-center">
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.total.expectedAccumulated}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-center">
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.total.actualAccumulated}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-center">
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.total.differenceAccumulated}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-center">
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.total.resultAccumulated}
             </td>
-            <td class="px-4 py-3 border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F]"></td>
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F]"></td>
           </tr>
         </tbody>
       </table>
