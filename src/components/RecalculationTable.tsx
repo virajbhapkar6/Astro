@@ -1,4 +1,4 @@
-import { For } from "solid-js"
+import { For, createSignal } from "solid-js"
 import type { Component } from "solid-js"
 
 type RecalculationItem = {
@@ -31,12 +31,25 @@ type RecalculationTableProps = {
 }
 
 const RecalculationTable: Component<RecalculationTableProps> = (props) => {
+  // Create reactive signals for the table data
+  const [tableItems, setTableItems] = createSignal<RecalculationItem[]>(props.items)
+  const [tableTotal, setTableTotal] = createSignal(props.total)
+
+  // Update signals when props change
+  if (props.items !== tableItems()) {
+    setTableItems(props.items)
+  }
+  
+  if (props.total !== tableTotal()) {
+    setTableTotal(props.total)
+  }
+
   return (
-    <div class="w-[1218px] h-[293px] ">
-      <table class=" divide-y divide-gray-200">
+    <div class="w-[1218px] h-[293px]">
+      <table class=" divide-y divide-gray-200 border-separate border-spacing-0 rounded-lg shadow-lg">
         <thead class="bg-[#FFFFFF] ">
           <tr>
-            <th scope="col" class="w-[149px] h-[30px] border border-[#C0C0C0] text-xs  text-[#4F4F4F]  ">
+            <th scope="col" class="w-[149px] h-[30px] border border-[#C0C0C0] text-xs  text-[#4F4F4F] rounded-tl-lg">
             &nbsp;
             </th>
             <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs  text-[#4F4F4F]  ">
@@ -68,68 +81,69 @@ const RecalculationTable: Component<RecalculationTableProps> = (props) => {
             <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs font-medium text-[#4F4F4F]  ">
             &nbsp;
             </th>
-            <th scope="col" class="w-[61px] h-[30px]  border border-[#C0C0C0]  text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[61px] h-[30px]  border border-[#C0C0C0]  text-xs font-medium text-[#4F4F4F] rounded-tr-lg ">
             &nbsp;
             </th>
           </tr>
           <tr class="bg-[#F9FAFB]">
-          <th scope="col" class="w-[149px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+          <th scope="col" class="w-[149px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
               Category of assets
             </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
               Closing balance in original cost
             </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
               Expected depreciation expense
             </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
               Actual depreciation expense
             </th> 
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
               Difference
             </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
               Result
             </th>
-            <th scope="col" class="w-[104.7px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[104.7px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
               Expected accumulated DEPR expense
             </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Actual accumulated DEPR
             </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Difference
             </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Result
             </th>
-            <th scope="col" class="w-[61px] h-[70px] p-[2px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]  ">
+            <th scope="col" class="w-[61px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Notes
             </th>
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-          <For each={props.items}>
+          <For each={tableItems()}>
             {(item) => (
               <tr>
-                <td class="w-[149px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F]">{item.category}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.closingBalance}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
+                <td class="w-[149px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{item.category}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.closingBalance}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
                   {item.expectedDepreciation}
                 </td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.actualDepreciation}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.difference}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.result}</td>
-                <td class="w-[104.7px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.actualDepreciation}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.difference}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.result}</td>
+                <td class="w-[104.7px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
                   {item.expectedAccumulated}
                 </td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.actualAccumulated}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.actualAccumulated}</td>
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
                   {item.differenceAccumulated}
                 </td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">{item.resultAccumulated}</td>
-                <td class="w-[61px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
+                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.resultAccumulated}</td>
+                <td class="w-[61px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
                   {item.notes && (
+                    <div class="flex justify-center items-center">
                     <svg width="31" height="27" viewBox="0 0 31 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_6609_10535)">
                     <path d="M4.5 9C4.5 4.58172 8.08172 1 12.5 1H18.5C22.9183 1 26.5 4.58172 26.5 9V15C26.5 19.4183 22.9183 23 18.5 23H4.5V9Z" fill="#44916F" shape-rendering="crispEdges"/>
@@ -138,7 +152,7 @@ const RecalculationTable: Component<RecalculationTableProps> = (props) => {
                     <rect x="8.5" y="14.7002" width="7" height="1.8" rx="0.9" fill="#F9FAFB"/>
                     </g>
                     <defs>
-                    <filter id="filter0_d_6609_10535" x="0.5" y="0" width="30" height="30" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d_6609_10535" x="0.5" y="0" width="30" height="30" filterUnits="userSpaceOnUse" color-InterpolationFilters="sRGB">
                     <feFlood flood-opacity="0" result="BackgroundImageFix"/>
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                     <feOffset dy="3"/>
@@ -150,40 +164,40 @@ const RecalculationTable: Component<RecalculationTableProps> = (props) => {
                     </filter>
                     </defs>
                     </svg>
-                    
+                    </div>
                   )}
                 </td>
               </tr>
             )}
           </For>
           <tr class="bg-gray-50 font-medium">
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F]">Total</td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">{props.total.closingBalance}</td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
-              {props.total.expectedDepreciation}
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-bl-lg">Total</td>
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{tableTotal().closingBalance}</td>
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              {tableTotal().expectedDepreciation}
             </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
-              {props.total.actualDepreciation}
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              {tableTotal().actualDepreciation}
             </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
-              {props.total.difference}
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              {tableTotal().difference}
             </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
-              {props.total.result}
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              {tableTotal().result}
             </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
-              {props.total.expectedAccumulated}
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              {tableTotal().expectedAccumulated}
             </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
-              {props.total.actualAccumulated}
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              {tableTotal().actualAccumulated}
             </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
-              {props.total.differenceAccumulated}
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              {tableTotal().differenceAccumulated}
             </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
-              {props.total.resultAccumulated}
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              {tableTotal().resultAccumulated}
             </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F]"></td>
+            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-br-lg"></td>
           </tr>
         </tbody>
       </table>

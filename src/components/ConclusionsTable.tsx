@@ -2,7 +2,7 @@ import type { Component } from "solid-js"
 
 const ConclusionsTable: Component = () => {
   return (
-    <div class="w-[1211px] h-[172px] border border-[#C0C0C0] rounded-lg">
+    <div class="w-[1211px] h-[170px] border border-[#C0C0C0] rounded-lg overflow-hidden shadow-lg">
       <table class="w-[1208px] h-[140px] text-sm text-gray-700">
             <thead>
                 <tr class="bg-[#F3F4F6] text-sm text-gray-800">
