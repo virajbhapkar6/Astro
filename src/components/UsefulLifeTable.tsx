@@ -27,22 +27,22 @@ const UsefulLifeTable: Component<UsefulLifeTableProps> = (props) => {
             <th
               scope="col"
               colspan="3"
-              class="w-[664px] h-[20px] p-[4px] text-center text-xs font-medium text-[#F9FAFB] border border-[#C0C0C0] bg-[#777695] rounded-tr-lg"
+              class="w-[664px] h-[20px] p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] border border-[#C0C0C0] bg-[#777695] rounded-tr-lg"
             >
               Depreciation policy of the company
             </th>
           </tr>
           <tr>
-            <th scope="col" class="w-[279px] h-[30px] p-[4px] border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F]">
+            <th scope="col" class="w-[279px] h-[30px] p-[4px] border border-[#C0C0C0] text-left font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Fixed assets
             </th>
-            <th scope="col" class="w-[278px] h-[30px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th scope="col" class="w-[278px] h-[30px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Useful life (Month)
             </th>
-            <th scope="col" class="w-[278px] h-[30px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th scope="col" class="w-[278px] h-[30px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Useful life
             </th>
-            <th scope="col" class="w-[387px] h-[30px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th scope="col" class="w-[387px] h-[30px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Agree with the book record?
             </th>
           </tr>
@@ -53,16 +53,16 @@ const UsefulLifeTable: Component<UsefulLifeTableProps> = (props) => {
               const isLast = index() === props.assets.length - 1
               return (
                 <tr>
-                  <td class={`w-[279px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] ${isLast ? 'rounded-bl-lg border-b border-[#C0C0C0]' : ''}`}>
+                  <td class={`w-[279px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] ${isLast ? 'rounded-bl-lg border-b border-[#C0C0C0]' : ''}`}>
                     {asset.asset}
                   </td>
-                  <td class="w-[279px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">
+                  <td class="w-[279px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-center">
                     {asset.usefulLifeMonth}
                   </td>
-                  <td class="w-[278px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center">
+                  <td class="w-[278px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-center">
                     {asset.usefulLife}
                   </td>
-                  <td class={`w-[387px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-center ${isLast ? 'rounded-br-lg border-b border-[#C0C0C0]' : ''}`}>
+                  <td class={`w-[387px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-center ${isLast ? 'rounded-br-lg border-b border-[#C0C0C0]' : ''}`}>
                     {asset.agreeWithBook}
                   </td>
                 </tr>

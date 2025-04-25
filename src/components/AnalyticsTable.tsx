@@ -41,14 +41,14 @@ const AnalyticsTable: Component<AnalyticsTableProps> = (props) => {
             <th
               scope="col"
               colspan="3"
-              class="w-[442.5px] h-[20px] border border-[#C0C0C0] text-center text-xs font-medium text-[#F9FAFB] bg-[#777695]"
+              class="w-[442.5px] h-[20px] border border-[#C0C0C0] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] bg-[#777695]"
             >
               2023
             </th>
             <th
               scope="col"
               colspan="3"
-              class="w-[442.5px] h-[20px] border border-[#C0C0C0] text-center text-xs font-medium text-[#F9FAFB] bg-[#777695] "
+              class="w-[442.5px] h-[20px] border border-[#C0C0C0] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] bg-[#777695] "
             >
               2022
             </th>
@@ -66,31 +66,31 @@ const AnalyticsTable: Component<AnalyticsTableProps> = (props) => {
             </th>
           </tr>
           <tr class="bg-[#F9FAFB]">
-            <th class="w-[188.35px] h-[80px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th class="w-[188.35px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Category of assets
             </th>
-            <th class="w-[164.78px] h-[80px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th class="w-[164.78px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Closing balance in original cost
             </th>
-            <th class="w-[146.09px] h-[80px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th class="w-[146.09px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Actual depreciation expense
             </th>
-            <th class="w-[134.48px] h-[80px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th class="w-[134.48px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               % of depreciation to original cost
             </th>
-            <th class="w-[164.56px] h-[80px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th class="w-[164.56px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Closing balance in original cost
             </th>
-            <th class="w-[145.29px] h-[80px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th class="w-[145.29px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Actual depreciation expense
             </th>
-            <th class="w-[134.58px] h-[80px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th class="w-[134.58px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               % of depreciation to original cost
             </th>
-            <th class="w-[87.82px] h-[80px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th class="w-[87.82px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Flux
             </th>
-            <th class="w-[62px] h-[80px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F]">
+            <th class="w-[62px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
               Notes
             </th>
           </tr>
@@ -99,15 +99,15 @@ const AnalyticsTable: Component<AnalyticsTableProps> = (props) => {
           <For each={props.assets}>
             {(asset, index) => (
               <tr>
-                <td class={`p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] `}>{asset.category}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm text-[#4F4F4F]">{asset.closingBalance2023}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm text-[#4F4F4F]">{asset.actualDepreciation2023}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm text-[#4F4F4F]">{asset.percentDepreciation2023}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm text-[#4F4F4F]">{asset.closingBalance2022}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm text-[#4F4F4F]">{asset.actualDepreciation2022}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm text-[#4F4F4F]">{asset.percentDepreciation2022}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center text-sm text-[#4F4F4F]">{asset.flux}</td>
-                <td class={`p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center text-sm text-[#4F4F4F]`}>
+                <td class={`p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] `}>{asset.category}</td>
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.closingBalance2023}</td>
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.actualDepreciation2023}</td>
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.percentDepreciation2023}</td>
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.closingBalance2022}</td>
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.actualDepreciation2022}</td>
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.percentDepreciation2022}</td>
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.flux}</td>
+                <td class={`p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]`}>
                   {asset.notes && (
                     <div class="flex justify-center items-center">
                     <svg width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -137,15 +137,15 @@ const AnalyticsTable: Component<AnalyticsTableProps> = (props) => {
             )}
           </For>
           <tr class="bg-[#FFFFFF] font-medium">
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] rounded-bl-lg">Total</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-right font-medium text-[#4F4F4F]">{props.total.closingBalance2023}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm font-medium text-[#4F4F4F]">{props.total.actualDepreciation2023}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm font-medium text-[#4F4F4F]">{props.total.percentDepreciation2023}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm font-medium text-[#4F4F4F]">{props.total.closingBalance2022}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm font-medium text-[#4F4F4F]">{props.total.actualDepreciation2022}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right text-sm font-medium text-[#4F4F4F]">{props.total.percentDepreciation2022}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center text-sm font-medium text-[#4F4F4F]">{props.total.flux}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] rounded-br-lg">&nbsp;</td>
+          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-bl-lg">Total</td>
+          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.closingBalance2023}</td>
+          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.actualDepreciation2023}</td>
+          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.percentDepreciation2023}</td>
+          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.closingBalance2022}</td>
+          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.actualDepreciation2022}</td>
+          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.percentDepreciation2022}</td>
+          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.flux}</td>
+          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-br-lg">&nbsp;</td>
         </tr>
         </tbody>
       </table>

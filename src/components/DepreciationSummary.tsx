@@ -426,7 +426,7 @@ const DepreciationSummary: Component = () => {
   }
 
   return (
-    <div class="w-[1290px] h-[2250px] p-[16px] gap-[15px] ">
+    <div class="w-[1290px] h-[2350px] p-[16px] gap-[15px] ">
     <div class="mx-auto p-4 space-y-4 ">
       <div class="border border-[#C0C0C0] w-[1258px] h-[272px] rounded-lg p-4 bg-white shadow-lg">
       <div class="w-full ">
@@ -469,11 +469,11 @@ const DepreciationSummary: Component = () => {
 
         <div class="space-y-4">
          
-        <div class="border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg w-[1258px] h-[296px]">
+        <div class="border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg w-[1258px] h-[312px]">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-[#333333] mb-2">Depreciation Policy</h2>
           <DepreciationPolicyTable assets={depreciationPolicyAssets} />
         </div>
-        <div class="w-[1258px] h-[277px] border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg">
+        <div class="w-[1258px] h-[284px] border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-[#333333] mb-2">Review of Useful Life</h2>
           <UsefulLifeTable assets={usefulLifeAssets} />
           </div>
@@ -481,7 +481,7 @@ const DepreciationSummary: Component = () => {
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-[#333333] mb-2">Analytics</h2>
           <AnalyticsTable assets={analyticsAssets} total={analyticsTotal} />
           </div>
-          <div class="w-[1258px] h-[540px] border border-[#C0C0C0] rounded-lg p-4  bg-white shadow-lg">
+          <div class="w-[1258px] h-[546px] border border-[#C0C0C0] rounded-lg p-4  bg-white shadow-lg">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-[#333333] mb-2">Depreciation Allocation</h2>
           <DepreciationAllocationTable monthlyAllocations={monthlyAllocations} totalRow={allocationTotal} />
           </div>

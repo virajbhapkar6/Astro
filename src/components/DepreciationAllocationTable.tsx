@@ -35,7 +35,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
       <table class="min-w-full divide-y divide-gray-200 border-separate border-spacing-0 rounded-lg">
         <thead class="bg-[#F3F4F6]">
           <tr>
-            <th class="w-[116px] h-[62px] border border-[#C0C0C0]   font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] font-['Inter'] rounded-tl-lg" rowspan="2">
+            <th class="w-[116px] h-[62px] border border-[#C0C0C0]   font-bold text-[14px] leading-[150%] tracking-[0%] text-[#333333] font-['Inter'] rounded-tl-lg" rowspan="2">
               <div class="flex justify-center items-center gap-2">
                 <span>Expenses</span>
                 <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,14 +53,14 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             <th
               scope="col"
               colspan="4"
-              class="w-[494.5px] h-[31px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] "
+              class="w-[494.5px] h-[31px] border border-[#C0C0C0] text-center font-inter font-semibold text-xs leading-[150%] tracking-[0%] text-[#4F4F4F] "
             >
               Depreciation per month
             </th>
             <th
               rowspan="2"
               scope="col"
-              class=" w-[116px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] font-['Inter']"
+              class=" w-[116px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-bold text-[14px] leading-[150%] tracking-[0%] text-[#333333] font-['Inter']"
             >
 
               <div class="flex justify-center items-center gap-2">
@@ -80,7 +80,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             <th
               scope="col"
               colspan="4"
-              class="w-[494.5px] h-[31px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] rounded-tr-lg"
+              class="w-[494.5px] h-[31px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-xs leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-tr-lg"
             >
               Allocation % for each category
             </th>
@@ -88,7 +88,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
           <tr class="bg-[#F3F4F6]">
           <th
               scope="col"
-              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] "
+              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]"
             >
                <div class="flex justify-center items-center gap-1">
                <span> Overhead</span>
@@ -107,7 +107,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             </th>
             <th
               scope="col"
-              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] "
+              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]"
             >
               <div class="flex justify-center items-center gap-1">
                 <span>Selling</span>
@@ -125,7 +125,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             </th>
             <th
               scope="col"
-              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] "
+              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]"
             >
               <div class="flex justify-center items-center gap-1">
                 <span>G&A</span>
@@ -143,7 +143,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             </th>
             <th
               scope="col"
-              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] "
+              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]"
             >
               <div class="flex justify-center items-center gap-1">
               <span>R&D</span>
@@ -161,7 +161,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             </th>
             <th
               scope="col"
-              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] "
+              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]"
             >
                <div class="flex justify-center items-center gap-1">
                <span> Overhead</span>
@@ -180,7 +180,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             </th>
             <th
               scope="col"
-              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] "
+              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]"
             >
                <div class="flex justify-center items-center gap-1">
                <span>  Selling</span>
@@ -199,7 +199,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             </th>
             <th
               scope="col"
-              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] "
+              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]"
             >
               <div class="flex justify-center items-center gap-1">
               <span>   G&A</span>
@@ -218,7 +218,7 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             </th>
             <th
               scope="col"
-              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] "
+              class="w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]"
             >
               <div class="flex justify-center items-center gap-1">
               <span>     R&D</span>
@@ -256,19 +256,19 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
                 <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
                   {allocation.rAndD}
                 </td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#333333] text-right">
                   {allocation.total}
                 </td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
                   {allocation.overheadPercent}
                 </td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
                   {allocation.sellingPercent}
                 </td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
                   {allocation.gAndAPercent}
                 </td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right">
+                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
                   {allocation.rAndDPercent}
                 </td>
               </tr>
@@ -288,19 +288,19 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
             <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
               {props.totalRow.rAndD}
             </td>
-            <td class="p-[4px] whitespace-nowrap text-sm font-medium text-[#F9FAFB] text-right bg-[#777695]">
+            <td class="p-[4px] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#FFFFFF] text-right bg-[#777695]">
               {props.totalRow.total}
             </td>
-            <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
+            <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
               {props.totalRow.overheadPercent}
             </td>
-            <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
+            <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
               {props.totalRow.sellingPercent}
             </td>
-            <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
+            <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
               {props.totalRow.gAndAPercent}
             </td>
-            <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right rounded-br-lg">
+            <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right rounded-br-lg">
               {props.totalRow.rAndDPercent}
             </td>
           </tr>
@@ -308,10 +308,10 @@ const DepreciationAllocationTable: Component<DepreciationAllocationTableProps> =
         <tfoot class="m-0 p-0 h-0">
           <tr class="m-0 p-0 h-0">
             <td class="w-[116px] p-0 m-0 h-0 text-center"></td>
-            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] text-xs font-bold text-shadow-lg">GL</td>
-            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] text-xs font-bold text-shadow-lg">GL</td>
-            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] text-xs font-bold text-shadow-lg">GL</td>
-            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] text-xs font-bold text-shadow-lg">GL</td>
+            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-[#CB4E4E] ">GL</td>
+            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-[#CB4E4E]">GL</td>
+            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-[#CB4E4E]">GL</td>
+            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-[#CB4E4E]">GL</td>
           </tr>
         </tfoot>
       </table>

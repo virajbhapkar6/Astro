@@ -6,9 +6,9 @@ const ConclusionsTable: Component = () => {
       <table class="w-[1208px] h-[140px] text-sm text-gray-700">
             <thead>
                 <tr class="bg-[#F3F4F6] text-sm text-gray-800">
-                <th class="text-left font-medium p-[5px] border-r border-gray-400">Conclusions</th>
-                <th class="text-left font-medium p-[5px]  border-r border-gray-400">Preparation</th>
-                <th class="text-left flex justify-center items-center font-medium p-[5px] border-r border-gray-400">Review</th>
+                <th class="text-left font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] p-[5px] border-r border-gray-400">Conclusions</th>
+                <th class="text-left font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] p-[5px]  border-r border-gray-400">Preparation</th>
+                <th class="text-left flex justify-center items-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] p-[5px] border-r border-gray-400">Review</th>
                 <th>
                     
                 <div class="flex justify-center items-center">
@@ -24,7 +24,7 @@ const ConclusionsTable: Component = () => {
             </thead>
             <tbody>
                 <tr class="border-t border-gray-400  p-[5px]">
-                <td class="px-2 py-1.5 text-gray-700 border-r border-gray-400">The work has been performed in accordance with the audit program.</td>
+                <td class="px-2 py-1.5 font-inter font-normal text-xs leading-[150%] tracking-[0%] text-[#4F4F4F] align-middle border-r border-gray-400">The work has been performed in accordance with the audit program.</td>
                 <td class="px-2 py-1.5 border-r border-gray-400">
                     <svg width="58" height="22" viewBox="0 0 58 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="0.269043" width="57.2436" height="22" rx="8" fill="#E89F51"/>
@@ -51,7 +51,7 @@ const ConclusionsTable: Component = () => {
                 </td>
                 </tr>
                 <tr class="border-t border-gray-400  p-[5px]">
-                    <td class="px-2 py-2 text-gray-700 border-r border-gray-400">The work performed and the results obtained have been adequately documented.</td>
+                    <td class="px-2 py-2 font-inter font-normal text-xs leading-[150%] tracking-[0%] text-[#4F4F4F] align-middle border-r border-gray-400">The work performed and the results obtained have been adequately documented.</td>
                     <td class="px-2 py-2 border-r border-gray-400">
                         <svg width="58" height="22" viewBox="0 0 58 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="0.269043" width="57.2436" height="22" rx="8" fill="#E89F51"/>
@@ -73,7 +73,7 @@ const ConclusionsTable: Component = () => {
                     </td>
                 </tr>
                 <tr class="border-t border-gray-400 p-[5px]">
-                    <td class="px-2 py-1.5 text-gray-700 border-r border-gray-400">All necessary information has been collected for the presentation and disclosure in the financial statements.</td>
+                    <td class="px-2 py-1.5 font-inter font-normal text-xs leading-[150%] tracking-[0%] text-[#4F4F4F] align-middle border-r border-gray-400">All necessary information has been collected for the presentation and disclosure in the financial statements.</td>
                     <td class="w-[54px] border-r border-gray-400"></td>
                     <td class="w-24 border-r border-gray-400"></td>
                     <td class="px-3 py-1.5 text-right">
@@ -83,7 +83,7 @@ const ConclusionsTable: Component = () => {
                     </td>
                 </tr>
                 <tr class="border-t border-gray-400  p-[5px]">
-                    <td class="px-2 py-1.5 text-gray-700 border-r border-gray-400">Based on audit procedures performed, the above objectives have been met and without any material exception noted.</td>
+                    <td class="px-2 py-1.5 font-inter font-normal text-xs leading-[150%] tracking-[0%] text-[#4F4F4F] align-middle border-r border-gray-400">Based on audit procedures performed, the above objectives have been met and without any material exception noted.</td>
                     <td class="w-[54px] border-r border-gray-400"></td>
                     <td class="w-24 border-r border-gray-400"></td>
                     <td class="px-3 py-1.5 text-right">
