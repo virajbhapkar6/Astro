@@ -426,7 +426,7 @@ const DepreciationSummary: Component = () => {
   }
 
   return (
-    <div class="w-[1290px] h-[2350px] p-[16px] gap-[15px] ">
+    <div class="w-[1290px] h-[2558px] p-[16px] gap-[15px] ">
     <div class="mx-auto p-4 space-y-4 ">
       <div class="border border-[#C0C0C0] w-[1258px] h-[272px] rounded-lg p-4 bg-white shadow-lg">
       <div class="w-full ">
