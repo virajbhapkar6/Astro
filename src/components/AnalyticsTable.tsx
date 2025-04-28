@@ -1,5 +1,6 @@
-import { For } from "solid-js"
-import type { Component } from "solid-js"
+import { createSignal, createEffect, For } from "solid-js"
+import { createSolidTable, flexRender, getCoreRowModel } from "@tanstack/solid-table"
+import type { ColumnDef } from "@tanstack/solid-table"
 
 type AssetAnalyticsItem = {
   category: string
@@ -13,144 +14,255 @@ type AssetAnalyticsItem = {
   notes: boolean
 }
 
-type AnalyticsTableProps = {
-  assets: AssetAnalyticsItem[]
-  total: {
-    closingBalance2023: string
-    actualDepreciation2023: string
-    percentDepreciation2023: string
-    closingBalance2022: string
-    actualDepreciation2022: string
-    percentDepreciation2022: string
-    flux: string
-  }
+type AnalyticsTableTotal = {
+  closingBalance2023: string
+  actualDepreciation2023: string
+  percentDepreciation2023: string
+  closingBalance2022: string
+  actualDepreciation2022: string
+  percentDepreciation2022: string
+  flux: string
 }
 
-const AnalyticsTable: Component<AnalyticsTableProps> = (props) => {
+type HeaderItem = {
+  text: string
+  colSpan?: number
+  className: string
+}
+
+export default function AnalyticsTable() {
+  const [data, setData] = createSignal<AssetAnalyticsItem[]>([])
+  const [total, setTotal] = createSignal<AnalyticsTableTotal | null>(null)
+  const [headers, setHeaders] = createSignal<{
+    mainHeader: HeaderItem[]
+    subHeader: HeaderItem[]
+  }>({ mainHeader: [], subHeader: [] })
+  const [loading, setLoading] = createSignal(true)
+
+  createEffect(async () => {
+    try {
+      const response = await fetch("/src/data/analytics.json")
+      const jsonData = await response.json()
+      console.log(response);
+      console.log(jsonData);
+      setData(jsonData.assets)
+      setTotal(jsonData.total)
+      setHeaders(jsonData.headers)
+      setLoading(false)
+    } catch (error) {
+      console.error("Error fetching analytics data:", error)
+      setLoading(false)
+    }
+  })
+
+  const columns = [
+    {
+      accessorKey: "category",
+      header: () => headers().subHeader[0].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "closingBalance2023",
+      header: () => headers().subHeader[1].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "actualDepreciation2023",
+      header: () => headers().subHeader[2].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "percentDepreciation2023",
+      header: () => headers().subHeader[3].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "closingBalance2022",
+      header: () => headers().subHeader[4].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "actualDepreciation2022",
+      header: () => headers().subHeader[5].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "percentDepreciation2022",
+      header: () => headers().subHeader[6].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "flux",
+      header: () => headers().subHeader[7].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "notes",
+      header: () => headers().subHeader[8].text,
+      cell: (info) =>
+        info.getValue() ? (
+          <div class="flex justify-center items-center">
+            <svg width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d_6609_10523)">
+                <path
+                  d="M4 9C4 4.58172 7.58172 1 12 1H18C22.4183 1 26 4.58172 26 9V15C26 19.4183 22.4183 23 18 23H4V9Z"
+                  fill="#44916F"
+                  shape-rendering="crispEdges"
+                />
+                <rect x="8" y="7.5" width="14" height="1.8" rx="0.9" fill="#F9FAFB" />
+                <rect x="8" y="11.1001" width="14" height="1.8" rx="0.9" fill="#F9FAFB" />
+                <rect x="8" y="14.7" width="7" height="1.8" rx="0.9" fill="#F9FAFB" />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_6609_10523"
+                  x="0"
+                  y="0"
+                  width="30"
+                  height="30"
+                  filterUnits="userSpaceOnUse"
+                  color-InterpolationFilters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="3" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6609_10523" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6609_10523" result="shape" />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+        ) : null,
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+  ] as ColumnDef<AssetAnalyticsItem>[]
+
+  const table = createSolidTable({
+    get data() {
+      return data()
+    },
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  })
+
+  /*if (loading()) {
+    return <div class="flex justify-center items-center h-32">Loading...</div>
+  }
+*/
   return (
     <div class="rounded-lg shadow-lg">
       <table class="min-w-full divide-y divide-gray-200 w-[1218px] h-[237px] border-separate border-spacing-0 rounded-lg">
         <thead class="bg-gray-50">
           <tr>
-            <th
-              scope="col"
-              class="w-[188px] h-[20px] border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] bg-[#FFFFFF] rounded-tl-lg"
-            >
-              &nbsp;
-            </th>
-            <th
-              scope="col"
-              colspan="3"
-              class="w-[442.5px] h-[20px] border border-[#C0C0C0] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] bg-[#777695]"
-            >
-              2023
-            </th>
-            <th
-              scope="col"
-              colspan="3"
-              class="w-[442.5px] h-[20px] border border-[#C0C0C0] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] bg-[#777695] "
-            >
-              2022
-            </th>
-            <th
-              scope="col"
-              class="border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] bg-[#FFFFFF]"
-            >
-              &nbsp;
-            </th>
-            <th
-              scope="col"
-              class="border border-[#C0C0C0] text-center text-xs font-medium text-[#4F4F4F] bg-[#FFFFFF] rounded-tr-lg"
-            >
-              &nbsp;
-            </th>
+            <For each={headers().mainHeader}>
+              {(header, index) => (
+                <th scope="col" colSpan={header.colSpan} class={header.className}>
+                  {header.text}
+                </th>
+              )}
+            </For>
           </tr>
           <tr class="bg-[#F9FAFB]">
-            <th class="w-[188.35px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Category of assets
-            </th>
-            <th class="w-[164.78px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Closing balance in original cost
-            </th>
-            <th class="w-[146.09px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Actual depreciation expense
-            </th>
-            <th class="w-[134.48px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              % of depreciation to original cost
-            </th>
-            <th class="w-[164.56px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Closing balance in original cost
-            </th>
-            <th class="w-[145.29px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Actual depreciation expense
-            </th>
-            <th class="w-[134.58px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              % of depreciation to original cost
-            </th>
-            <th class="w-[87.82px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Flux
-            </th>
-            <th class="w-[62px] h-[80px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Notes
-            </th>
+            <For each={headers().subHeader}>
+              {(header, index) => (
+                <th scope="col" class={header.className}>
+                  {header.text}
+                </th>
+              )}
+            </For>
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200 p-2">
-          <For each={props.assets}>
-            {(asset, index) => (
+          <For each={table.getRowModel().rows}>
+            {(row, rowIndex) => (
               <tr>
-                <td class={`p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] `}>{asset.category}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.closingBalance2023}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.actualDepreciation2023}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.percentDepreciation2023}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.closingBalance2022}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.actualDepreciation2022}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.percentDepreciation2022}</td>
-                <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{asset.flux}</td>
-                <td class={`p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]`}>
-                  {asset.notes && (
-                    <div class="flex justify-center items-center">
-                    <svg width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g filter="url(#filter0_d_6609_10523)">
-                        <path d="M4 9C4 4.58172 7.58172 1 12 1H18C22.4183 1 26 4.58172 26 9V15C26 19.4183 22.4183 23 18 23H4V9Z" fill="#44916F" shape-rendering="crispEdges" />
-                        <rect x="8" y="7.5" width="14" height="1.8" rx="0.9" fill="#F9FAFB" />
-                        <rect x="8" y="11.1001" width="14" height="1.8" rx="0.9" fill="#F9FAFB" />
-                        <rect x="8" y="14.7" width="7" height="1.8" rx="0.9" fill="#F9FAFB" />
-                      </g>
-                      <defs>
-                        <filter id="filter0_d_6609_10523" x="0" y="0" width="30" height="30" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                          <feOffset dy="3" />
-                          <feGaussianBlur stdDeviation="2" />
-                          <feComposite in2="hardAlpha" operator="out" />
-                          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
-                          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6609_10523" />
-                          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6609_10523" result="shape" />
-                        </filter>
-                      </defs>
-                    </svg>
-                    </div>
-                  )}
-                </td>
+                <For each={row.getVisibleCells()}>
+                  {(cell, cellIndex) => {
+                    const meta = cell.column.columnDef.meta as any
+                    const className = meta?.className ? meta.className() : ""
+
+                    return <td class={className}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                  }}
+                </For>
               </tr>
             )}
           </For>
-          <tr class="bg-[#FFFFFF] font-medium">
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-bl-lg">Total</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.closingBalance2023}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.actualDepreciation2023}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.percentDepreciation2023}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.closingBalance2022}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.actualDepreciation2022}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.percentDepreciation2022}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{props.total.flux}</td>
-          <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-br-lg">&nbsp;</td>
-        </tr>
+          {total() && (
+            <tr class="bg-[#FFFFFF] font-medium">
+              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-bl-lg">
+                Total
+              </td>
+              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
+                {total()?.closingBalance2023}
+              </td>
+              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
+                {total()?.actualDepreciation2023}
+              </td>
+              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
+                {total()?.percentDepreciation2023}
+              </td>
+              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
+                {total()?.closingBalance2022}
+              </td>
+              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
+                {total()?.actualDepreciation2022}
+              </td>
+              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
+                {total()?.percentDepreciation2022}
+              </td>
+              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
+                {total()?.flux}
+              </td>
+              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-br-lg">
+                &nbsp;
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
   )
 }
-
-export default AnalyticsTable

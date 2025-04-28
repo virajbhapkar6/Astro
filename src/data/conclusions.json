@@ -1,0 +1,39 @@
+{
+  "headers": [
+    {
+      "text": "Conclusions",
+      "className": "text-left font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] p-[5px] border-r border-gray-400"
+    },
+    {
+      "text": "Preparation",
+      "className": "text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] p-[5px] border-r border-gray-400"
+    },
+    {
+      "text": "Review",
+      "className": "text-left flex justify-center items-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] p-[5px] border-r border-gray-400"
+    },
+    { "text": "", "className": "", "hasIcon": true }
+  ],
+  "conclusions": [
+    {
+      "text": "The work has been performed in accordance with the audit program.",
+      "preparation": "MC",
+      "review": ["RT", "SH"]
+    },
+    {
+      "text": "The work performed and the results obtained have been adequately documented.",
+      "preparation": "MC",
+      "review": "SH"
+    },
+    {
+      "text": "All necessary information has been collected for the presentation and disclosure in the financial statements.",
+      "preparation": "",
+      "review": ""
+    },
+    {
+      "text": "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
+      "preparation": "",
+      "review": ""
+    }
+  ]
+}

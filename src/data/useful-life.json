@@ -1,0 +1,72 @@
+{
+    "headers": {
+      "mainHeader": [
+        {
+          "text": "",
+          "colSpan": 1,
+          "className": "w-[279px] h-[20px] p-[4px] border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] bg-[#FFFFFF] rounded-tl-lg"
+        },
+        {
+          "text": "",
+          "colSpan": 1,
+          "className": "w-[278px] h-[20px] p-[4px] border border-[#C0C0C0] text-left text-xs font-medium text-[#4F4F4F] bg-[#FFFFFF]"
+        },
+        {
+          "text": "Depreciation policy of the company",
+          "colSpan": 3,
+          "className": "w-[664px] h-[20px] p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] border border-[#C0C0C0] bg-[#777695] rounded-tr-lg"
+        }
+      ],
+      "subHeader": [
+        {
+          "text": "Fixed assets",
+          "className": "w-[279px] h-[30px] p-[4px] border border-[#C0C0C0] text-left font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]"
+        },
+        {
+          "text": "Useful life (Month)",
+          "className": "w-[278px] h-[30px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]"
+        },
+        {
+          "text": "Useful life",
+          "className": "w-[278px] h-[30px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]"
+        },
+        {
+          "text": "Agree with the book record?",
+          "className": "w-[387px] h-[30px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]"
+        }
+      ]
+    },
+    "assets": [
+      {
+        "asset": "Leasehold Improvement",
+        "usefulLifeMonth": "31-120",
+        "usefulLife": "31-120",
+        "agreeWithBook": "Yes"
+      },
+      {
+        "asset": "Motor Vehicle",
+        "usefulLifeMonth": "40-120",
+        "usefulLife": "40-120",
+        "agreeWithBook": "Yes"
+      },
+      {
+        "asset": "Fixture & Furniture",
+        "usefulLifeMonth": "60",
+        "usefulLife": "60",
+        "agreeWithBook": "Yes"
+      },
+      {
+        "asset": "Office Equipment",
+        "usefulLifeMonth": "48",
+        "usefulLife": "48",
+        "agreeWithBook": "Yes"
+      },
+      {
+        "asset": "Machinery & Tool",
+        "usefulLifeMonth": "48",
+        "usefulLife": "48",
+        "agreeWithBook": "Yes"
+      }
+    ]
+  }
+  

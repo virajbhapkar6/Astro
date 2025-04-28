@@ -1,0 +1,230 @@
+{
+    "headers": {
+      "mainHeader": [
+        {
+          "text": "Expenses",
+          "colSpan": 1,
+          "rowSpan": 2,
+          "className": "w-[116px] h-[62px] border border-[#C0C0C0] font-bold text-[14px] leading-[150%] tracking-[0%] text-[#333333] font-['Inter'] rounded-tl-lg",
+          "hasArrow": true
+        },
+        {
+          "text": "Depreciation per month",
+          "colSpan": 4,
+          "className": "w-[494.5px] h-[31px] border border-[#C0C0C0] text-center font-inter font-semibold text-xs leading-[150%] tracking-[0%] text-[#4F4F4F]"
+        },
+        {
+          "text": "Total",
+          "colSpan": 1,
+          "rowSpan": 2,
+          "className": "w-[116px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-bold text-[14px] leading-[150%] tracking-[0%] text-[#333333] font-['Inter']",
+          "hasArrow": true
+        },
+        {
+          "text": "Allocation % for each category",
+          "colSpan": 4,
+          "className": "w-[494.5px] h-[31px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-xs leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-tr-lg"
+        }
+      ],
+      "subHeader": [
+        {
+          "text": "Overhead",
+          "className": "w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "hasArrow": true
+        },
+        {
+          "text": "Selling",
+          "className": "w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "hasArrow": true
+        },
+        {
+          "text": "G&A",
+          "className": "w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "hasArrow": true
+        },
+        {
+          "text": "R&D",
+          "className": "w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "hasArrow": true
+        },
+        {
+          "text": "Overhead",
+          "className": "w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "hasArrow": true
+        },
+        {
+          "text": "Selling",
+          "className": "w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "hasArrow": true
+        },
+        {
+          "text": "G&A",
+          "className": "w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "hasArrow": true
+        },
+        {
+          "text": "R&D",
+          "className": "w-[124.38px] h-[32px] p-[4px] border border-[#C0C0C0] text-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "hasArrow": true
+        }
+      ]
+    },
+    "monthlyAllocations": [
+      {
+        "month": "January",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "February",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "March",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "April",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "May",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "June",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "July",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "August",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "September",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "October",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "November",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      },
+      {
+        "month": "December",
+        "overhead": "",
+        "selling": "",
+        "gAndA": "",
+        "rAndD": "",
+        "total": "-",
+        "overheadPercent": "0.00%",
+        "sellingPercent": "0.00%",
+        "gAndAPercent": "0.00%",
+        "rAndDPercent": "0.00%"
+      }
+    ],
+    "totalRow": {
+      "overhead": "",
+      "selling": "",
+      "gAndA": "",
+      "rAndD": "",
+      "total": "-",
+      "overheadPercent": "0.00%",
+      "sellingPercent": "0.00%",
+      "gAndAPercent": "0.00%",
+      "rAndDPercent": "0.00%"
+    }
+  }
+  

@@ -1,5 +1,6 @@
-import { For, createSignal } from "solid-js"
-import type { Component } from "solid-js"
+import { createSignal, createEffect, For } from "solid-js"
+import { createSolidTable, flexRender, getCoreRowModel } from "@tanstack/solid-table"
+import type { ColumnDef } from "@tanstack/solid-table"
 
 type RecalculationItem = {
   category: string
@@ -15,194 +16,273 @@ type RecalculationItem = {
   notes: boolean
 }
 
-type RecalculationTableProps = {
-  items: RecalculationItem[]
-  total: {
-    closingBalance: string
-    expectedDepreciation: string
-    actualDepreciation: string
-    difference: string
-    result: string
-    expectedAccumulated: string
-    actualAccumulated: string
-    differenceAccumulated: string
-    resultAccumulated: string
-  }
+type RecalculationTotal = {
+  closingBalance: string
+  expectedDepreciation: string
+  actualDepreciation: string
+  difference: string
+  result: string
+  expectedAccumulated: string
+  actualAccumulated: string
+  differenceAccumulated: string
+  resultAccumulated: string
 }
 
-const RecalculationTable: Component<RecalculationTableProps> = (props) => {
-  // Create reactive signals for the table data
-  const [tableItems, setTableItems] = createSignal<RecalculationItem[]>(props.items)
-  const [tableTotal, setTableTotal] = createSignal(props.total)
+type HeaderItem = {
+  text: string
+  colSpan?: number
+  className: string
+}
 
-  // Update signals when props change
-  if (props.items !== tableItems()) {
-    setTableItems(props.items)
-  }
-  
-  if (props.total !== tableTotal()) {
-    setTableTotal(props.total)
-  }
+export default function RecalculationTable() {
+  const [data, setData] = createSignal<RecalculationItem[]>([])
+  const [total, setTotal] = createSignal<RecalculationTotal | null>(null)
+  const [headers, setHeaders] = createSignal<{
+    mainHeader: HeaderItem[]
+    subHeader: HeaderItem[]
+  }>({ mainHeader: [], subHeader: [] })
+  const [loading, setLoading] = createSignal(true)
+
+  createEffect(async () => {
+    try {
+      const response = await fetch("/src/data/recalculation.json")
+      const jsonData = await response.json()
+      setData(jsonData.items)
+      setTotal(jsonData.total)
+      setHeaders(jsonData.headers)
+      setLoading(false)
+    } catch (error) {
+      console.error("Error fetching recalculation data:", error)
+      setLoading(false)
+    }
+  })
+
+  const columns = [
+    {
+      accessorKey: "category",
+      header: () => headers().subHeader[0].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[149px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "closingBalance",
+      header: () => headers().subHeader[1].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+    {
+      accessorKey: "expectedDepreciation",
+      header: () => headers().subHeader[2].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+    {
+      accessorKey: "actualDepreciation",
+      header: () => headers().subHeader[3].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+    {
+      accessorKey: "difference",
+      header: () => headers().subHeader[4].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+    {
+      accessorKey: "result",
+      header: () => headers().subHeader[5].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+    {
+      accessorKey: "expectedAccumulated",
+      header: () => headers().subHeader[6].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[104.7px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+    {
+      accessorKey: "actualAccumulated",
+      header: () => headers().subHeader[7].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+    {
+      accessorKey: "differenceAccumulated",
+      header: () => headers().subHeader[8].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+    {
+      accessorKey: "resultAccumulated",
+      header: () => headers().subHeader[9].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+    {
+      accessorKey: "notes",
+      header: () => headers().subHeader[10].text,
+      cell: (info) =>
+        info.getValue() ? (
+          <div class="flex justify-center items-center">
+            <svg width="31" height="27" viewBox="0 0 31 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d_6609_10535)">
+                <path
+                  d="M4.5 9C4.5 4.58172 8.08172 1 12.5 1H18.5C22.9183 1 26.5 4.58172 26.5 9V15C26.5 19.4183 22.9183 23 18.5 23H4.5V9Z"
+                  fill="#44916F"
+                  shape-rendering="crispEdges"
+                />
+                <rect x="8.5" y="7.5" width="14" height="1.8" rx="0.9" fill="#F9FAFB" />
+                <rect x="8.5" y="11.1001" width="14" height="1.8" rx="0.9" fill="#F9FAFB" />
+                <rect x="8.5" y="14.7002" width="7" height="1.8" rx="0.9" fill="#F9FAFB" />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_6609_10535"
+                  x="0.5"
+                  y="0"
+                  width="30"
+                  height="30"
+                  filterUnits="userSpaceOnUse"
+                  color-InterpolationFilters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="3" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6609_10535" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6609_10535" result="shape" />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+        ) : null,
+      meta: {
+        className: () =>
+          "w-[61px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+      },
+    },
+  ] as ColumnDef<RecalculationItem>[]
+
+  const table = createSolidTable({
+    get data() {
+      return data()
+    },
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  })
 
   return (
     <div class="w-[1218px] h-[293px]">
-      <table class=" divide-y divide-gray-200 border-separate border-spacing-0 rounded-lg shadow-lg">
-        <thead class="bg-[#FFFFFF] ">
+      <table class="divide-y divide-gray-200 border-separate border-spacing-0 rounded-lg shadow-lg">
+        <thead class="bg-[#FFFFFF]">
           <tr>
-            <th scope="col" class="w-[149px] h-[30px] border border-[#C0C0C0] text-xs  text-[#4F4F4F] rounded-tl-lg">
-            &nbsp;
-            </th>
-            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs  text-[#4F4F4F]  ">
-            &nbsp;
-            </th>
-            <th
-              scope="col"
-              colspan="2"
-              class="w-[227.32px] h-[30px]  border border-[#C0C0C0] text-xs  text-[#4F4F4F]   bg-[#E6E6FA]"
-            >
-              Depreciation in the current period
-            </th>
-            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0] text-xs  text-[#4F4F4F]  ">
-            &nbsp;
-            </th>
-            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs  text-[#4F4F4F]  ">
-            &nbsp;
-            </th>
-            <th
-              scope="col"
-              colspan="2"
-              class="w-[217.86px] h-[30px]  border border-[#C0C0C0] text-xs  text-[#4F4F4F]   bg-[#E6E6FA]"
-            >
-              Depreciation in the current period
-            </th>
-            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs font-medium text-[#4F4F4F]  ">
-            &nbsp;
-            </th>
-            <th scope="col" class="w-[114.16px] h-[30px]  border border-[#C0C0C0]  text-xs font-medium text-[#4F4F4F]  ">
-            &nbsp;
-            </th>
-            <th scope="col" class="w-[61px] h-[30px]  border border-[#C0C0C0]  text-xs font-medium text-[#4F4F4F] rounded-tr-lg ">
-            &nbsp;
-            </th>
+            <For each={headers().mainHeader}>
+              {(header, index) => (
+                <th scope="col" colSpan={header.colSpan} class={header.className}>
+                  {header.text}
+                </th>
+              )}
+            </For>
           </tr>
           <tr class="bg-[#F9FAFB]">
-          <th scope="col" class="w-[149px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
-              Category of assets
-            </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
-              Closing balance in original cost
-            </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
-              Expected depreciation expense
-            </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
-              Actual depreciation expense
-            </th> 
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
-              Difference
-            </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
-              Result
-            </th>
-            <th scope="col" class="w-[104.7px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]  ">
-              Expected accumulated DEPR expense
-            </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Actual accumulated DEPR
-            </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Difference
-            </th>
-            <th scope="col" class="w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Result
-            </th>
-            <th scope="col" class="w-[61px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">
-              Notes
-            </th>
+            <For each={headers().subHeader}>
+              {(header, index) => (
+                <th scope="col" class={header.className}>
+                  {header.text}
+                </th>
+              )}
+            </For>
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-          <For each={tableItems()}>
-            {(item) => (
+          <For each={table.getRowModel().rows}>
+            {(row, rowIndex) => (
               <tr>
-                <td class="w-[149px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]">{item.category}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.closingBalance}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-                  {item.expectedDepreciation}
-                </td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.actualDepreciation}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.difference}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.result}</td>
-                <td class="w-[104.7px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-                  {item.expectedAccumulated}
-                </td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.actualAccumulated}</td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-                  {item.differenceAccumulated}
-                </td>
-                <td class="w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{item.resultAccumulated}</td>
-                <td class="w-[61px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-                  {item.notes && (
-                    <div class="flex justify-center items-center">
-                    <svg width="31" height="27" viewBox="0 0 31 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_d_6609_10535)">
-                    <path d="M4.5 9C4.5 4.58172 8.08172 1 12.5 1H18.5C22.9183 1 26.5 4.58172 26.5 9V15C26.5 19.4183 22.9183 23 18.5 23H4.5V9Z" fill="#44916F" shape-rendering="crispEdges"/>
-                    <rect x="8.5" y="7.5" width="14" height="1.8" rx="0.9" fill="#F9FAFB"/>
-                    <rect x="8.5" y="11.1001" width="14" height="1.8" rx="0.9" fill="#F9FAFB"/>
-                    <rect x="8.5" y="14.7002" width="7" height="1.8" rx="0.9" fill="#F9FAFB"/>
-                    </g>
-                    <defs>
-                    <filter id="filter0_d_6609_10535" x="0.5" y="0" width="30" height="30" filterUnits="userSpaceOnUse" color-InterpolationFilters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset dy="3"/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feComposite in2="hardAlpha" operator="out"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6609_10535"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6609_10535" result="shape"/>
-                    </filter>
-                    </defs>
-                    </svg>
-                    </div>
-                  )}
-                </td>
+                <For each={row.getVisibleCells()}>
+                  {(cell, cellIndex) => {
+                    const meta = cell.column.columnDef.meta as any
+                    const className = meta?.className ? meta.className() : ""
+
+                    return <td class={className}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                  }}
+                </For>
               </tr>
             )}
           </For>
-          <tr class="bg-gray-50 font-medium">
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-bl-lg">Total</td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">{tableTotal().closingBalance}</td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-              {tableTotal().expectedDepreciation}
-            </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-              {tableTotal().actualDepreciation}
-            </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-              {tableTotal().difference}
-            </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-              {tableTotal().result}
-            </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-              {tableTotal().expectedAccumulated}
-            </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-              {tableTotal().actualAccumulated}
-            </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-              {tableTotal().differenceAccumulated}
-            </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
-              {tableTotal().resultAccumulated}
-            </td>
-            <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-br-lg"></td>
-          </tr>
+          {total() && (
+            <tr class="bg-gray-50 font-medium">
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-bl-lg">
+                Total
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+                {total()?.closingBalance}
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+                {total()?.expectedDepreciation}
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+                {total()?.actualDepreciation}
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+                {total()?.difference}
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+                {total()?.result}
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+                {total()?.expectedAccumulated}
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+                {total()?.actualAccumulated}
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+                {total()?.differenceAccumulated}
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+                {total()?.resultAccumulated}
+              </td>
+              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-br-lg"></td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
   )
 }
-
-export default RecalculationTable

@@ -1,0 +1,116 @@
+{
+    "headers": {
+      "mainHeader": [
+        {
+          "text": "",
+          "colSpan": 1,
+          "className": "p-[4px] text-left text-xs font-medium text-[#F9FAFB] border border-[#C0C0C0] bg-white rounded-tl-lg"
+        },
+        {
+          "text": "2023",
+          "colSpan": 3,
+          "className": "p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] border border-[#C0C0C0] bg-[#777695]"
+        },
+        {
+          "text": "2022",
+          "colSpan": 3,
+          "className": "p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] border border-[#C0C0C0] bg-[#777695] rounded-tr-lg"
+        }
+      ],
+      "methodHeader": [
+        {
+          "text": "",
+          "colSpan": 1,
+          "className": "p-[4px] text-left text-xs font-medium text-[#F9FAFB] border border-[#C0C0C0]"
+        },
+        {
+          "text": "Straight-line method",
+          "colSpan": 3,
+          "className": "p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#E6E6FA]"
+        },
+        {
+          "text": "Straight-line method",
+          "colSpan": 3,
+          "className": "p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#E6E6FA]"
+        }
+      ],
+      "subHeader": [
+        {
+          "text": "Depreciation Policy",
+          "className": "p-[4px] text-left font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
+        },
+        {
+          "text": "Useful life (Month)",
+          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
+        },
+        {
+          "text": "Residual value rate",
+          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
+        },
+        {
+          "text": "Depreciation rate",
+          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
+        },
+        {
+          "text": "Useful life (Month)",
+          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
+        },
+        {
+          "text": "Residual value rate",
+          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
+        },
+        {
+          "text": "Depreciation rate",
+          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
+        }
+      ]
+    },
+    "assets": [
+      {
+        "category": "Leasehold Improvement",
+        "usefulLife2023": "31-120",
+        "residualRate2023": "-",
+        "depreciationRate2023": "10% - 39%",
+        "usefulLife2022": "31-120",
+        "residualRate2022": "-",
+        "depreciationRate2022": "10% - 39%"
+      },
+      {
+        "category": "Motor Vehicle",
+        "usefulLife2023": "40-120",
+        "residualRate2023": "-",
+        "depreciationRate2023": "10% - 30%",
+        "usefulLife2022": "40-120",
+        "residualRate2022": "-",
+        "depreciationRate2022": "10% - 30%"
+      },
+      {
+        "category": "Fixture & Furniture",
+        "usefulLife2023": "60",
+        "residualRate2023": "-",
+        "depreciationRate2023": "20%",
+        "usefulLife2022": "60",
+        "residualRate2022": "-",
+        "depreciationRate2022": "20%"
+      },
+      {
+        "category": "Office Equipment",
+        "usefulLife2023": "48",
+        "residualRate2023": "-",
+        "depreciationRate2023": "25%",
+        "usefulLife2022": "48",
+        "residualRate2022": "-",
+        "depreciationRate2022": "25%"
+      },
+      {
+        "category": "Machinery & Tool",
+        "usefulLife2023": "48",
+        "residualRate2023": "-",
+        "depreciationRate2023": "25%",
+        "usefulLife2022": "48",
+        "residualRate2022": "-",
+        "depreciationRate2022": "25%"
+      }
+    ]
+  }
+  

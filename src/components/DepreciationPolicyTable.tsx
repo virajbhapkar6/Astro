@@ -1,5 +1,6 @@
-import { For } from "solid-js"
-import type { Component } from "solid-js"
+import { createSignal, createEffect, For } from "solid-js"
+import { createSolidTable, flexRender, getCoreRowModel } from "@tanstack/solid-table"
+import type { ColumnDef } from "@tanstack/solid-table"
 
 type AssetItem = {
   category: string
@@ -11,127 +12,153 @@ type AssetItem = {
   depreciationRate2022: string
 }
 
-type DepreciationPolicyTableProps = {
-  assets: AssetItem[]
+type HeaderItem = {
+  text: string
+  colSpan?: number
+  className: string
 }
 
-const DepreciationPolicyTable: Component<DepreciationPolicyTableProps> = (props) => {
+export default function DepreciationPolicyTable() {
+  const [data, setData] = createSignal<AssetItem[]>([])
+  const [headers, setHeaders] = createSignal<{
+    mainHeader: HeaderItem[]
+    methodHeader: HeaderItem[]
+    subHeader: HeaderItem[]
+  }>({ mainHeader: [], methodHeader: [], subHeader: [] })
+  const [loading, setLoading] = createSignal(true)
+
+  createEffect(async () => {
+    try {
+      const response = await fetch("/src/data/depreciation-policy.json")
+      const jsonData = await response.json()
+      setData(jsonData.assets)
+      setHeaders(jsonData.headers)
+      setLoading(false)
+    } catch (error) {
+      console.error("Error fetching depreciation policy data:", error)
+      setLoading(false)
+    }
+  })
+
+  const columns = [
+    {
+      accessorKey: "category",
+      header: () => headers().subHeader[0].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: (index: number, isLast: boolean) =>
+          `p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] bg-[#F3F4F6] ${isLast ? "rounded-bl-lg" : ""}`,
+      },
+    },
+    {
+      accessorKey: "usefulLife2023",
+      header: () => headers().subHeader[1].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "residualRate2023",
+      header: () => headers().subHeader[2].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center text-right font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "depreciationRate2023",
+      header: () => headers().subHeader[3].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "usefulLife2022",
+      header: () => headers().subHeader[4].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "residualRate2022",
+      header: () => headers().subHeader[5].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: () =>
+          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+      },
+    },
+    {
+      accessorKey: "depreciationRate2022",
+      header: () => headers().subHeader[6].text,
+      cell: (info) => info.getValue(),
+      meta: {
+        className: (index: number, isLast: boolean) =>
+          `p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] ${isLast ? "rounded-br-lg" : ""}`,
+      },
+    },
+  ] as ColumnDef<AssetItem>[]
+
+  const table = createSolidTable({
+    get data() {
+      return data()
+    },
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  })
+
   return (
     <div class="overflow-hidden rounded-lg shadow-lg">
       <table class="min-w-full divide-y divide-[#C0C0C0] w-[1218px] h-[213px] rounded-lg border-separate border-spacing-0">
         <thead>
           <tr>
-            <th
-              scope="col"
-              class="p-[4px] text-left text-xs font-medium text-[#F9FAFB] border border-[#C0C0C0] bg-white rounded-tl-lg"
-            >
-              
-            </th>
-            <th
-              scope="col"
-              colspan="3"
-              class="p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] border border-[#C0C0C0] bg-[#777695]"
-            >
-              2023
-             
-            </th>
-            <th
-              scope="col"
-              colspan="3"
-              class="p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] border border-[#C0C0C0] bg-[#777695] rounded-tr-lg"
-            >
-              2022
-              
-            </th>
+            <For each={headers().mainHeader}>
+              {(header, index) => (
+                <th scope="col" colSpan={header.colSpan} class={header.className}>
+                  {header.text}
+                </th>
+              )}
+            </For>
           </tr>
           <tr>
-            <th
-              scope="col"
-              class="p-[4px] text-left text-xs font-medium text-[#F9FAFB] border border-[#C0C0C0]"
-            >
-            
-            </th>
-            <th
-              scope="col"
-              colspan="3"
-              class="p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#E6E6FA]"
-            > Straight-line method</th>
-            <th
-              scope="col"
-              colspan="3"
-              class="p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#E6E6FA]"
-            > Straight-line method</th>
+            <For each={headers().methodHeader}>
+              {(header, index) => (
+                <th scope="col" colSpan={header.colSpan} class={header.className}>
+                  {header.text}
+                </th>
+              )}
+            </For>
           </tr>
           <tr>
-            <th
-              scope="col"
-              class="p-[4px] text-left font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
-            >
-              Depreciation Policy
-            </th>
-            <th
-              scope="col"
-              class="p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
-            >
-              Useful life (Month)
-            </th>
-            <th
-              scope="col"
-              class="p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
-            >
-              Residual value rate
-            </th>
-            <th
-              scope="col"
-              class="p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
-            >
-              Depreciation rate
-            </th>
-            <th
-              scope="col"
-              class="p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
-            >
-              Useful life (Month)
-            </th>
-            <th
-              scope="col"
-              class="p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
-            >
-              Residual value rate
-            </th>
-            <th
-              scope="col"
-              class="p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6]"
-            >
-              Depreciation rate
-            </th>
+            <For each={headers().subHeader}>
+              {(header, index) => (
+                <th scope="col" class={header.className}>
+                  {header.text}
+                </th>
+              )}
+            </For>
           </tr>
         </thead>
-        <tbody class="bg-white divide-y divide-[#C0C0C0]">
-          <For each={props.assets}>
-            {(asset, index) => (
+        <tbody class="bg-white divide-y divide-gray-200 p-2">
+          <For each={table.getRowModel().rows}>
+            {(row, rowIndex) => (
               <tr>
-                <td class={`p-[4px] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] bg-[#F3F4F6] ${index() === props.assets.length - 1 ? 'rounded-bl-lg' : ''}`}>
-                  {asset.category}
-                </td>
-                <td class="p-[4px] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0]">
-                  {asset.usefulLife2023}
-                </td>
-                <td class="p-[4px] whitespace-nowrap text-center text-right font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0]">
-                  {asset.residualRate2023}
-                </td>
-                <td class="p-[4px] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0]">
-                  {asset.depreciationRate2023}
-                </td>
-                <td class="p-[4px] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0]">
-                  {asset.usefulLife2022}
-                </td>
-                <td class="p-[4px] whitespace-nowrap text-right font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0]">
-                  {asset.residualRate2022}
-                </td>
-                <td class={`p-[4px] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] border border-[#C0C0C0] ${index() === props.assets.length - 1 ? 'rounded-br-lg' : ''}`}>
-                  {asset.depreciationRate2022}
-                </td>
+                <For each={row.getVisibleCells()}>
+                  {(cell, cellIndex) => {
+                    const isLast = rowIndex() === data().length - 1
+                    const meta = cell.column.columnDef.meta as any
+                    const className = meta?.className ? meta.className(rowIndex(), isLast) : ""
+
+                    return <td class={className}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                  }}
+                </For>
               </tr>
             )}
           </For>
@@ -140,5 +167,3 @@ const DepreciationPolicyTable: Component<DepreciationPolicyTableProps> = (props)
     </div>
   )
 }
-
-export default DepreciationPolicyTable

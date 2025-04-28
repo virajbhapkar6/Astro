@@ -1,0 +1,107 @@
+{
+    "headers": {
+      "mainHeader": [
+        { "text": "", "colSpan": 1, "className": "w-[149px] h-[30px] border border-[#C0C0C0] text-xs text-[#4F4F4F] rounded-tl-lg" },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-[#C0C0C0] text-xs text-[#4F4F4F]" },
+        { "text": "Depreciation in the current period", "colSpan": 2, "className": "w-[227.32px] h-[30px] border border-[#C0C0C0] text-xs text-[#4F4F4F] bg-[#E6E6FA]" },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-[#C0C0C0] text-xs text-[#4F4F4F]" },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-[#C0C0C0] text-xs text-[#4F4F4F]" },
+        { "text": "Depreciation in the current period", "colSpan": 2, "className": "w-[217.86px] h-[30px] border border-[#C0C0C0] text-xs text-[#4F4F4F] bg-[#E6E6FA]" },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-[#C0C0C0] text-xs font-medium text-[#4F4F4F]" },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-[#C0C0C0] text-xs font-medium text-[#4F4F4F]" },
+        { "text": "", "colSpan": 1, "className": "w-[61px] h-[30px] border border-[#C0C0C0] text-xs font-medium text-[#4F4F4F] rounded-tr-lg" }
+      ],
+      "subHeader": [
+        { "text": "Category of assets", "className": "w-[149px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Closing balance in original cost", "className": "w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Expected depreciation expense", "className": "w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Actual depreciation expense", "className": "w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Difference", "className": "w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Result", "className": "w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Expected accumulated DEPR expense", "className": "w-[104.7px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Actual accumulated DEPR", "className": "w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Difference", "className": "w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Result", "className": "w-[114.16px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" },
+        { "text": "Notes", "className": "w-[61px] h-[70px] p-[2px] border border-[#C0C0C0] text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]" }
+      ]
+    },
+    "items": [
+      {
+        "category": "Leasehold improvement",
+        "closingBalance": "628,038.00",
+        "expectedDepreciation": "49,319.39",
+        "actualDepreciation": "49,319.39",
+        "difference": "-",
+        "result": "N/A",
+        "expectedAccumulated": "49,319.39",
+        "actualAccumulated": "49,319.39",
+        "differenceAccumulated": "-",
+        "resultAccumulated": "N/A",
+        "notes": true
+      },
+      {
+        "category": "Motor Vehicle",
+        "closingBalance": "2,764,379.20",
+        "expectedDepreciation": "137,831.46",
+        "actualDepreciation": "137,831.46",
+        "difference": "-",
+        "result": "N/A",
+        "expectedAccumulated": "137,831.46",
+        "actualAccumulated": "137,831.46",
+        "differenceAccumulated": "-",
+        "resultAccumulated": "N/A",
+        "notes": false
+      },
+      {
+        "category": "Fixture & Furniture",
+        "closingBalance": "618,989.24",
+        "expectedDepreciation": "12,589.12",
+        "actualDepreciation": "12,589.12",
+        "difference": "-",
+        "result": "N/A",
+        "expectedAccumulated": "12,589.12",
+        "actualAccumulated": "12,589.12",
+        "differenceAccumulated": "-",
+        "resultAccumulated": "N/A",
+        "notes": true
+      },
+      {
+        "category": "Office Equipment",
+        "closingBalance": "1,498,254.35",
+        "expectedDepreciation": "136,724.71",
+        "actualDepreciation": "127,114.39",
+        "difference": "(9,610.32)",
+        "result": "Immaterial",
+        "expectedAccumulated": "136,724.71",
+        "actualAccumulated": "127,114.39",
+        "differenceAccumulated": "(9,610.32)",
+        "resultAccumulated": "Immaterial",
+        "notes": false
+      },
+      {
+        "category": "Machinery & Tool",
+        "closingBalance": "2,089,514.70",
+        "expectedDepreciation": "261,189.34",
+        "actualDepreciation": "261,189.34",
+        "difference": "(0.00)",
+        "result": "N/A",
+        "expectedAccumulated": "261,189.34",
+        "actualAccumulated": "261,189.34",
+        "differenceAccumulated": "(0.00)",
+        "resultAccumulated": "N/A",
+        "notes": false
+      }
+    ],
+    "total": {
+      "closingBalance": "7,599,175.49",
+      "expectedDepreciation": "597,654.02",
+      "actualDepreciation": "588,043.70",
+      "difference": "(9,610.32)",
+      "result": "Immaterial",
+      "expectedAccumulated": "597,654.02",
+      "actualAccumulated": "588,043.70",
+      "differenceAccumulated": "(9,610.32)",
+      "resultAccumulated": "Immaterial"
+    }
+  }
+  
