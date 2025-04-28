@@ -1,36 +1,15 @@
-import { createSignal, createEffect, For } from "solid-js"
+import { createSignal, For } from "solid-js"
 import { createSolidTable, flexRender, getCoreRowModel } from "@tanstack/solid-table"
 import type { ColumnDef } from "@tanstack/solid-table"
+import type { Conclusion, ConclusionsTableData } from "../types/conclusions"
 
-type Conclusion = {
-  text: string
-  preparation: string
-  review: string | string[]
+interface ConclusionsTableProps {
+  conclusionsData: ConclusionsTableData | null;
 }
 
-type HeaderItem = {
-  text: string
-  className: string
-  hasIcon?: boolean
-}
-
-export default function ConclusionsTable() {
-  const [data, setData] = createSignal<Conclusion[]>([])
-  const [headers, setHeaders] = createSignal<HeaderItem[]>([])
-  const [loading, setLoading] = createSignal(true)
-
-  createEffect(async () => {
-    try {
-      const response = await fetch("/src/data/conclusions.json")
-      const jsonData = await response.json()
-      setData(jsonData.conclusions)
-      setHeaders(jsonData.headers)
-      setLoading(false)
-    } catch (error) {
-      console.error("Error fetching conclusions data:", error)
-      setLoading(false)
-    }
-  })
+export default function ConclusionsTable(props: ConclusionsTableProps) {
+  const [data] = createSignal(props.conclusionsData?.conclusions ?? [])
+  const [headers] = createSignal(props.conclusionsData?.headers ?? [])
 
   const renderReviewBadge = (value: string) => {
     if (value === "RT") {

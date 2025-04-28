@@ -1,10 +1,48 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import DepreciationSummary from "../components/DepreciationSummary";
+import type { AnalyticsTableData } from "../types/analytics";
+import type { ConclusionsTableData } from "../types/conclusions";
+import type { DepreciationAllocationData } from "../types/depreciation-allocation";
+import type { UsefulLifeData } from "../types/useful-life";
+import type { RecalculationData } from "../types/recalculation";
+import type { DepreciationPolicyData } from "../types/depreciation-policy";
+
+// Fetch analytics data
+const analyticsResponse = await fetch("http://localhost:4321/src/data/analytics.json");
+const analyticsData: AnalyticsTableData = await analyticsResponse.json();
+
+// Fetch conclusions data
+const conclusionsResponse = await fetch("http://localhost:4321/src/data/conclusions.json");
+const conclusionsData: ConclusionsTableData = await conclusionsResponse.json();
+
+// Fetch allocation data
+const allocationResponse = await fetch("http://localhost:4321/src/data/depreciation-allocation.json");
+const allocationData: DepreciationAllocationData = await allocationResponse.json();
+
+// Fetch useful life data
+const usefulLifeResponse = await fetch("http://localhost:4321/src/data/useful-life.json");
+const usefulLifeData: UsefulLifeData = await usefulLifeResponse.json();
+
+// Fetch recalculation data
+const recalculationResponse = await fetch("http://localhost:4321/src/data/recalculation.json");
+const recalculationData: RecalculationData = await recalculationResponse.json();
+
+// Fetch policy data
+const policyResponse = await fetch("http://localhost:4321/src/data/depreciation-policy.json");
+const policyData: DepreciationPolicyData = await policyResponse.json();
+
 ---
 
 <Layout title="Depreciation Summary Dashboard">
   <main class="min-h-screen py-8">
-    <DepreciationSummary client:load />
+    <DepreciationSummary 
+      analyticsData={analyticsData}
+      conclusionsData={conclusionsData}
+      allocationData={allocationData}
+      usefulLifeData={usefulLifeData}
+      recalculationData={recalculationData}
+      policyData={policyData}
+    />
   </main>
 </Layout>

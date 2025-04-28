@@ -1,44 +1,15 @@
-import { createSignal, createEffect, For } from "solid-js"
+import { createSignal, For } from "solid-js"
 import { createSolidTable, flexRender, getCoreRowModel } from "@tanstack/solid-table"
 import type { ColumnDef } from "@tanstack/solid-table"
+import type { AssetItem, DepreciationPolicyData } from "../types/depreciation-policy"
 
-type AssetItem = {
-  category: string
-  usefulLife2023: string
-  residualRate2023: string
-  depreciationRate2023: string
-  usefulLife2022: string
-  residualRate2022: string
-  depreciationRate2022: string
+interface DepreciationPolicyTableProps {
+  policyData: DepreciationPolicyData | null;
 }
 
-type HeaderItem = {
-  text: string
-  colSpan?: number
-  className: string
-}
-
-export default function DepreciationPolicyTable() {
-  const [data, setData] = createSignal<AssetItem[]>([])
-  const [headers, setHeaders] = createSignal<{
-    mainHeader: HeaderItem[]
-    methodHeader: HeaderItem[]
-    subHeader: HeaderItem[]
-  }>({ mainHeader: [], methodHeader: [], subHeader: [] })
-  const [loading, setLoading] = createSignal(true)
-
-  createEffect(async () => {
-    try {
-      const response = await fetch("/src/data/depreciation-policy.json")
-      const jsonData = await response.json()
-      setData(jsonData.assets)
-      setHeaders(jsonData.headers)
-      setLoading(false)
-    } catch (error) {
-      console.error("Error fetching depreciation policy data:", error)
-      setLoading(false)
-    }
-  })
+export default function DepreciationPolicyTable(props: DepreciationPolicyTableProps) {
+  const [data] = createSignal(props.policyData?.assets ?? [])
+  const [headers] = createSignal(props.policyData?.headers ?? { mainHeader: [], methodHeader: [], subHeader: [] })
 
   const columns = [
     {

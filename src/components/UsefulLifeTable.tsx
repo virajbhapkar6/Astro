@@ -1,40 +1,15 @@
-import { createSignal, createEffect, For } from "solid-js"
+import { createSignal, For } from "solid-js"
 import { createSolidTable, flexRender, getCoreRowModel } from "@tanstack/solid-table"
 import type { ColumnDef } from "@tanstack/solid-table"
+import type { AssetLifeItem, UsefulLifeData } from "../types/useful-life"
 
-type AssetLifeItem = {
-  asset: string
-  usefulLifeMonth: string
-  usefulLife: string
-  agreeWithBook: string
+interface UsefulLifeTableProps {
+  usefulLifeData: UsefulLifeData | null;
 }
 
-type HeaderItem = {
-  text: string
-  colSpan?: number
-  className: string
-}
-
-export default function UsefulLifeTable() {
-  const [data, setData] = createSignal<AssetLifeItem[]>([])
-  const [headers, setHeaders] = createSignal<{
-    mainHeader: HeaderItem[]
-    subHeader: HeaderItem[]
-  }>({ mainHeader: [], subHeader: [] })
-  const [loading, setLoading] = createSignal(true)
-
-  createEffect(async () => {
-    try {
-      const response = await fetch("/src/data/useful-life.json")
-      const jsonData = await response.json()
-      setData(jsonData.assets)
-      setHeaders(jsonData.headers)
-      setLoading(false)
-    } catch (error) {
-      console.error("Error fetching useful life data:", error)
-      setLoading(false)
-    }
-  })
+export default function UsefulLifeTable(props: UsefulLifeTableProps) {
+  const [data] = createSignal(props.usefulLifeData?.assets ?? [])
+  const [headers] = createSignal(props.usefulLifeData?.headers ?? { mainHeader: [], subHeader: [] })
 
   const columns = [
     {

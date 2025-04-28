@@ -10,8 +10,23 @@ import RecalculationTable from "./RecalculationTable"
 import myImage from '../assets/Avtar1.jpg'
 import myimage from '../assets/Avtar2.jpg'
 import mygmage from '../assets/Avtar3.jpg'
+import type { AnalyticsTableData } from "../types/analytics";
+import type { ConclusionsTableData } from "../types/conclusions"
+import type { DepreciationAllocationData } from "../types/depreciation-allocation";
+import type { UsefulLifeData } from "../types/useful-life";
+import type { RecalculationData } from "../types/recalculation";
+import type { DepreciationPolicyData } from "../types/depreciation-policy";
 
-const DepreciationSummary: Component = () => {
+interface DepreciationSummaryProps {
+  analyticsData: AnalyticsTableData | null;
+  conclusionsData: ConclusionsTableData | null;
+  allocationData: DepreciationAllocationData | null;
+  usefulLifeData: UsefulLifeData | null;
+  recalculationData: RecalculationData | null;
+  policyData: DepreciationPolicyData | null;
+}
+
+const DepreciationSummary: Component<DepreciationSummaryProps> = (props) => {
   return (
     <div class="w-[1300px] h-[2310px] p-[16px] gap-[15px] bg-[#F3F4F6]">
     <div class="mx-auto p-4 space-y-4 ">
@@ -49,8 +64,8 @@ const DepreciationSummary: Component = () => {
           <div class="-mx-4">
           <hr class="border-t border-[#C0C0C0] "/>
           </div>
-          <div class="my-4 "> 
-          <ConclusionsTable  />
+          <div class="my-4"> 
+            <ConclusionsTable conclusionsData={props.conclusionsData} />
           </div>
         </div>
 
@@ -58,24 +73,24 @@ const DepreciationSummary: Component = () => {
          
         <div class="border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg w-[1258px] h-[312px]">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-[#333333] mb-2">Depreciation Policy</h2>
-          <DepreciationPolicyTable />
+          <DepreciationPolicyTable policyData={props.policyData} />
         </div>
         <div class="w-[1258px] h-[284px] border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-[#333333] mb-2">Review of Useful Life</h2>
-          <UsefulLifeTable />
+          <UsefulLifeTable usefulLifeData={props.usefulLifeData} />
           </div>
           <div class="w-[1258px] h-[362px] border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-[#333333] mb-2">Analytics</h2>
-          <AnalyticsTable />
+          <AnalyticsTable analyticsData={props.analyticsData} />
           </div>
           <div class="w-[1258px] h-[546px] border border-[#C0C0C0] rounded-lg p-4  bg-white shadow-lg">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-[#333333] mb-2">Depreciation Allocation</h2>
-          <DepreciationAllocationTable />
+          <DepreciationAllocationTable allocationData={props.allocationData} />
           </div>
           <div class="w-[1258px] h-[400px] border border-[#C0C0C0] rounded-lg p-4 bg-white shadow-lg">
           <h2 class="font-inter font-bold text-base leading-[150%] tracking-[0%] text-[#333333]">Recalculation of Depreciation</h2>
           <h3 class="font-inter font-semibold text-base leading-[150%] tracking-[0%] text-[#333333] mb-2">Summary by Category</h3>
-          <RecalculationTable />
+          <RecalculationTable recalculationData={props.recalculationData} />
           </div>
         </div>
       </div>

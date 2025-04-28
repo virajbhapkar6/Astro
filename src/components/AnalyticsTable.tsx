@@ -1,59 +1,16 @@
-import { createSignal, createEffect, For } from "solid-js"
+import { createSignal, For } from "solid-js"
 import { createSolidTable, flexRender, getCoreRowModel } from "@tanstack/solid-table"
 import type { ColumnDef } from "@tanstack/solid-table"
+import type { AnalyticsData, AnalyticsTableData } from "../types/analytics"
 
-type AssetAnalyticsItem = {
-  category: string
-  closingBalance2023: string
-  actualDepreciation2023: string
-  percentDepreciation2023: string
-  closingBalance2022: string
-  actualDepreciation2022: string
-  percentDepreciation2022: string
-  flux: string
-  notes: boolean
+interface AnalyticsTableProps {
+  analyticsData: AnalyticsTableData | null;
 }
 
-type AnalyticsTableTotal = {
-  closingBalance2023: string
-  actualDepreciation2023: string
-  percentDepreciation2023: string
-  closingBalance2022: string
-  actualDepreciation2022: string
-  percentDepreciation2022: string
-  flux: string
-}
-
-type HeaderItem = {
-  text: string
-  colSpan?: number
-  className: string
-}
-
-export default function AnalyticsTable() {
-  const [data, setData] = createSignal<AssetAnalyticsItem[]>([])
-  const [total, setTotal] = createSignal<AnalyticsTableTotal | null>(null)
-  const [headers, setHeaders] = createSignal<{
-    mainHeader: HeaderItem[]
-    subHeader: HeaderItem[]
-  }>({ mainHeader: [], subHeader: [] })
-  const [loading, setLoading] = createSignal(true)
-
-  createEffect(async () => {
-    try {
-      const response = await fetch("/src/data/analytics.json")
-      const jsonData = await response.json()
-      console.log(response);
-      console.log(jsonData);
-      setData(jsonData.assets)
-      setTotal(jsonData.total)
-      setHeaders(jsonData.headers)
-      setLoading(false)
-    } catch (error) {
-      console.error("Error fetching analytics data:", error)
-      setLoading(false)
-    }
-  })
+export default function AnalyticsTable(props: AnalyticsTableProps) {
+  const [data] = createSignal(props.analyticsData?.assets ?? [])
+  const [total] = createSignal(props.analyticsData?.total ?? null)
+  const [headers] = createSignal(props.analyticsData?.headers ?? { mainHeader: [], subHeader: [] })
 
   const columns = [
     {
@@ -178,7 +135,7 @@ export default function AnalyticsTable() {
           "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
       },
     },
-  ] as ColumnDef<AssetAnalyticsItem>[]
+  ] as ColumnDef<AnalyticsData>[]
 
   const table = createSolidTable({
     get data() {
@@ -188,10 +145,6 @@ export default function AnalyticsTable() {
     getCoreRowModel: getCoreRowModel(),
   })
 
-  /*if (loading()) {
-    return <div class="flex justify-center items-center h-32">Loading...</div>
-  }
-*/
   return (
     <div class="rounded-lg shadow-lg">
       <table class="min-w-full divide-y divide-gray-200 w-[1218px] h-[237px] border-separate border-spacing-0 rounded-lg">

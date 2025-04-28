@@ -1,61 +1,16 @@
-import { createSignal, createEffect, For } from "solid-js"
+import { createSignal, For } from "solid-js"
 import { createSolidTable, flexRender, getCoreRowModel } from "@tanstack/solid-table"
 import type { ColumnDef } from "@tanstack/solid-table"
+import type { RecalculationItem, RecalculationData } from "../types/recalculation"
 
-type RecalculationItem = {
-  category: string
-  closingBalance: string
-  expectedDepreciation: string
-  actualDepreciation: string
-  difference: string
-  result: string
-  expectedAccumulated: string
-  actualAccumulated: string
-  differenceAccumulated: string
-  resultAccumulated: string
-  notes: boolean
+interface RecalculationTableProps {
+  recalculationData: RecalculationData | null;
 }
 
-type RecalculationTotal = {
-  closingBalance: string
-  expectedDepreciation: string
-  actualDepreciation: string
-  difference: string
-  result: string
-  expectedAccumulated: string
-  actualAccumulated: string
-  differenceAccumulated: string
-  resultAccumulated: string
-}
-
-type HeaderItem = {
-  text: string
-  colSpan?: number
-  className: string
-}
-
-export default function RecalculationTable() {
-  const [data, setData] = createSignal<RecalculationItem[]>([])
-  const [total, setTotal] = createSignal<RecalculationTotal | null>(null)
-  const [headers, setHeaders] = createSignal<{
-    mainHeader: HeaderItem[]
-    subHeader: HeaderItem[]
-  }>({ mainHeader: [], subHeader: [] })
-  const [loading, setLoading] = createSignal(true)
-
-  createEffect(async () => {
-    try {
-      const response = await fetch("/src/data/recalculation.json")
-      const jsonData = await response.json()
-      setData(jsonData.items)
-      setTotal(jsonData.total)
-      setHeaders(jsonData.headers)
-      setLoading(false)
-    } catch (error) {
-      console.error("Error fetching recalculation data:", error)
-      setLoading(false)
-    }
-  })
+export default function RecalculationTable(props: RecalculationTableProps) {
+  const [data] = createSignal(props.recalculationData?.items ?? [])
+  const [total] = createSignal(props.recalculationData?.total ?? null)
+  const [headers] = createSignal(props.recalculationData?.headers ?? { mainHeader: [], subHeader: [] })
 
   const columns = [
     {

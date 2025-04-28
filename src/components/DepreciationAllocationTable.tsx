@@ -1,62 +1,16 @@
-import { createSignal, createEffect, For } from "solid-js"
+import { createSignal, For } from "solid-js"
 import { createSolidTable, flexRender, getCoreRowModel } from "@tanstack/solid-table"
 import type { ColumnDef } from "@tanstack/solid-table"
+import type { MonthlyAllocation, DepreciationAllocationData } from "../types/depreciation-allocation"
 
-type MonthlyAllocation = {
-  month: string
-  overhead: string
-  selling: string
-  gAndA: string
-  rAndD: string
-  total: string
-  overheadPercent: string
-  sellingPercent: string
-  gAndAPercent: string
-  rAndDPercent: string
+interface DepreciationAllocationTableProps {
+  allocationData: DepreciationAllocationData | null;
 }
 
-type AllocationTotal = {
-  overhead: string
-  selling: string
-  gAndA: string
-  rAndD: string
-  total: string
-  overheadPercent: string
-  sellingPercent: string
-  gAndAPercent: string
-  rAndDPercent: string
-}
-
-type HeaderItem = {
-  text: string
-  colSpan?: number
-  rowSpan?: number
-  className: string
-  hasArrow?: boolean
-}
-
-export default function DepreciationAllocationTable() {
-  const [data, setData] = createSignal<MonthlyAllocation[]>([])
-  const [total, setTotal] = createSignal<AllocationTotal | null>(null)
-  const [headers, setHeaders] = createSignal<{
-    mainHeader: HeaderItem[]
-    subHeader: HeaderItem[]
-  }>({ mainHeader: [], subHeader: [] })
-  const [loading, setLoading] = createSignal(true)
-
-  createEffect(async () => {
-    try {
-      const response = await fetch("/src/data/depreciation-allocation.json")
-      const jsonData = await response.json()
-      setData(jsonData.monthlyAllocations)
-      setTotal(jsonData.totalRow)
-      setHeaders(jsonData.headers)
-      setLoading(false)
-    } catch (error) {
-      console.error("Error fetching depreciation allocation data:", error)
-      setLoading(false)
-    }
-  })
+export default function DepreciationAllocationTable(props: DepreciationAllocationTableProps) {
+  const [data] = createSignal(props.allocationData?.monthlyAllocations ?? [])
+  const [total] = createSignal(props.allocationData?.totalRow ?? null)
+  const [headers] = createSignal(props.allocationData?.headers ?? { mainHeader: [], subHeader: [] })
 
   const columns = [
     {
