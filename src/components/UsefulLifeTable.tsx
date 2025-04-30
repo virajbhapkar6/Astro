@@ -18,8 +18,8 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: (index: number, isLast: boolean) =>
-          `w-[279px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] ${
-            isLast ? "rounded-bl-lg border-b border-[#C0C0C0]" : ""
+          `w-[279px] h-[30px] p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 ${
+            isLast ? "rounded-bl-lg border-b border-gray-300" : ""
           }`,
       },
     },
@@ -29,7 +29,7 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[279px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-center",
+          "w-[279px] h-[30px] p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-center",
       },
     },
     {
@@ -38,7 +38,7 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[278px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-center",
+          "w-[278px] h-[30px] p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-center",
       },
     },
     {
@@ -47,8 +47,8 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: (index: number, isLast: boolean) =>
-          `w-[387px] h-[30px] p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-center ${
-            isLast ? "rounded-br-lg border-b border-[#C0C0C0]" : ""
+          `w-[387px] h-[30px] p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-center ${
+            isLast ? "rounded-br-lg border-b border-gray-300" : ""
           }`,
       },
     },
@@ -64,7 +64,7 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
 
   return (
     <div class="w-[1218px] h-[198px] rounded-lg">
-      <table class="min-w-full divide-y divide-gray-200 rounded-lg border border-[#C0C0C0] border-separate border-spacing-0 shadow-lg">
+      <table class="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-300 border-separate border-spacing-0 shadow-lg">
         <thead class="bg-[#F3F4F6]">
           <tr class="bg-gray-50">
             <For each={headers().mainHeader}>
@@ -85,7 +85,7 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
             </For>
           </tr>
         </thead>
-        <tbody class="bg-white divide-y divide-gray-200 border border-[#C0C0C0]">
+        <tbody class="bg-white divide-y divide-gray-200 border border-gray-300">
           <For each={table.getRowModel().rows}>
             {(row, rowIndex) => (
               <tr>

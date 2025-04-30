@@ -19,7 +19,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[149px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "w-[149px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -28,7 +28,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -37,7 +37,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -46,7 +46,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -55,7 +55,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -64,7 +64,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -73,7 +73,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[104.7px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[104.7px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -82,7 +82,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -91,7 +91,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -100,7 +100,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -150,7 +150,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
         ) : null,
       meta: {
         className: () =>
-          "w-[61px] h-[30px] p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "w-[61px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
   ] as ColumnDef<RecalculationItem>[]
@@ -203,37 +203,37 @@ export default function RecalculationTable(props: RecalculationTableProps) {
           </For>
           {total() && (
             <tr class="bg-gray-50 font-medium">
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-bl-lg">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 rounded-bl-lg">
                 Total
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.closingBalance}
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.expectedDepreciation}
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.actualDepreciation}
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.difference}
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.result}
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.expectedAccumulated}
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.actualAccumulated}
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.differenceAccumulated}
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.resultAccumulated}
               </td>
-              <td class="p-[5px] border border-[#C0C0C0] whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] rounded-br-lg"></td>
+              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 rounded-br-lg"></td>
             </tr>
           )}
         </tbody>

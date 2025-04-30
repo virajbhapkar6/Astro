@@ -18,7 +18,7 @@ export default function DepreciationPolicyTable(props: DepreciationPolicyTablePr
       cell: (info) => info.getValue(),
       meta: {
         className: (index: number, isLast: boolean) =>
-          `p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] bg-[#F3F4F6] ${isLast ? "rounded-bl-lg" : ""}`,
+          `p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 bg-gray-100 ${isLast ? "rounded-bl-lg" : ""}`,
       },
     },
     {
@@ -27,7 +27,7 @@ export default function DepreciationPolicyTable(props: DepreciationPolicyTablePr
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "p-[4px] border border-gray-300 whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -36,7 +36,7 @@ export default function DepreciationPolicyTable(props: DepreciationPolicyTablePr
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center text-right font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "p-[4px] border border-gray-300 whitespace-nowrap text-center text-right font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -45,7 +45,7 @@ export default function DepreciationPolicyTable(props: DepreciationPolicyTablePr
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "p-[4px] border border-gray-300 whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -54,7 +54,7 @@ export default function DepreciationPolicyTable(props: DepreciationPolicyTablePr
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "p-[4px] border border-gray-300 whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -63,7 +63,7 @@ export default function DepreciationPolicyTable(props: DepreciationPolicyTablePr
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-right font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F]",
+          "p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -72,7 +72,7 @@ export default function DepreciationPolicyTable(props: DepreciationPolicyTablePr
       cell: (info) => info.getValue(),
       meta: {
         className: (index: number, isLast: boolean) =>
-          `p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] ${isLast ? "rounded-br-lg" : ""}`,
+          `p-[4px] border border-gray-300 whitespace-nowrap text-center font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 ${isLast ? "rounded-br-lg" : ""}`,
       },
     },
   ] as ColumnDef<AssetItem>[]
@@ -87,7 +87,7 @@ export default function DepreciationPolicyTable(props: DepreciationPolicyTablePr
 
   return (
     <div class="overflow-hidden rounded-lg shadow-lg">
-      <table class="min-w-full divide-y divide-[#C0C0C0] w-[1218px] h-[213px] rounded-lg border-separate border-spacing-0">
+      <table class="min-w-full divide-y divide-gray-400 w-[1218px] h-[213px] rounded-lg border-separate border-spacing-0">
         <thead>
           <tr>
             <For each={headers().mainHeader}>

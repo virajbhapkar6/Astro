@@ -19,7 +19,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-[#4F4F4F] font-['Inter'] bg-[#F3F4F6]",
+          "p-[4px] border border-gray-300 whitespace-nowrap text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 font-['Inter'] bg-[#F3F4F6]",
       },
     },
     {
@@ -27,7 +27,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       header: "Overhead",
       cell: (info) => info.getValue(),
       meta: {
-        className: () => "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right",
+        className: () => "p-[4px] border border-gray-300 whitespace-nowrap text-sm text-gray-700 text-right",
       },
     },
     {
@@ -35,7 +35,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       header: "Selling",
       cell: (info) => info.getValue(),
       meta: {
-        className: () => "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right",
+        className: () => "p-[4px] border border-gray-300 whitespace-nowrap text-sm text-gray-700 text-right",
       },
     },
     {
@@ -43,7 +43,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       header: "G&A",
       cell: (info) => info.getValue(),
       meta: {
-        className: () => "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right",
+        className: () => "p-[4px] border border-gray-300 whitespace-nowrap text-sm text-gray-700 text-right",
       },
     },
     {
@@ -51,7 +51,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       header: "R&D",
       cell: (info) => info.getValue(),
       meta: {
-        className: () => "p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm text-[#4F4F4F] text-right",
+        className: () => "p-[4px] border border-gray-300 whitespace-nowrap text-sm text-gray-700 text-right",
       },
     },
     {
@@ -60,7 +60,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#333333] text-right",
+          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-800 text-right",
       },
     },
     {
@@ -69,7 +69,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -78,7 +78,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -87,7 +87,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -96,7 +96,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right",
+          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
   ] as ColumnDef<MonthlyAllocation>[]
@@ -179,31 +179,31 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
               <td class="p-[4px] whitespace-nowrap text-sm font-medium text-center text-[#F9FAFB] bg-[#777695] rounded-bl-lg">
                 Total
               </td>
-              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
+              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
                 {total()?.overhead}
               </td>
-              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
+              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
                 {total()?.selling}
               </td>
-              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
+              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
                 {total()?.gAndA}
               </td>
-              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap text-sm font-medium text-[#4F4F4F] text-right">
+              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
                 {total()?.rAndD}
               </td>
               <td class="p-[4px] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#FFFFFF] text-right bg-[#777695]">
                 {total()?.total}
               </td>
-              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.overheadPercent}
               </td>
-              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.sellingPercent}
               </td>
-              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right">
+              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right">
                 {total()?.gAndAPercent}
               </td>
-              <td class="p-[4px] border border-[#C0C0C0] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] text-right rounded-br-lg">
+              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right rounded-br-lg">
                 {total()?.rAndDPercent}
               </td>
             </tr>

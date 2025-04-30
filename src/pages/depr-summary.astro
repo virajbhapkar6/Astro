@@ -28,10 +28,9 @@ const usefulLifeData: UsefulLifeData = await usefulLifeResponse.json();
 const recalculationResponse = await fetch("http://localhost:4321/src/data/recalculation.json");
 const recalculationData: RecalculationData = await recalculationResponse.json();
 
-// Fetch policy data
+// Add this fetch call
 const policyResponse = await fetch("http://localhost:4321/src/data/depreciation-policy.json");
 const policyData: DepreciationPolicyData = await policyResponse.json();
-
 ---
 
 <Layout title="Depreciation Summary Dashboard">
