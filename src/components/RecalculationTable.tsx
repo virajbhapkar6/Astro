@@ -19,7 +19,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[149px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "w-[149px] h-[30px] p-[5px]  whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-t border-gray-400 first:rounded-tl-lg ",
       },
     },
     {
@@ -28,7 +28,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[114.16px] h-[30px] p-[5px]  whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
     {
@@ -37,7 +37,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[114.16px] h-[30px] p-[5px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -46,7 +46,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[114.16px] h-[30px] p-[5px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -55,7 +55,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[114.16px] h-[30px] p-[5px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -64,7 +64,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[114.16px] h-[30px] p-[5px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -73,7 +73,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[104.7px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[104.7px] h-[30px] p-[5px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -82,7 +82,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[114.16px] h-[30px] p-[5px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -91,7 +91,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[114.16px] h-[30px] p-[5px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -100,7 +100,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[114.16px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[114.16px] h-[30px] p-[5px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
       },
     },
     {
@@ -150,7 +150,7 @@ export default function RecalculationTable(props: RecalculationTableProps) {
         ) : null,
       meta: {
         className: () =>
-          "w-[61px] h-[30px] p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "w-[61px] h-[30px] p-[5px]  whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 first:rounded-tr-lg",
       },
     },
   ] as ColumnDef<RecalculationItem>[]
@@ -165,79 +165,81 @@ export default function RecalculationTable(props: RecalculationTableProps) {
 
   return (
     <div class="w-[1218px] h-[293px]">
-      <table class="divide-y divide-gray-200 border-separate border-spacing-0 rounded-lg shadow-lg">
-        <thead class="bg-[#FFFFFF]">
-          <tr>
-            <For each={headers().mainHeader}>
-              {(header, index) => (
-                <th scope="col" colSpan={header.colSpan} class={header.className}>
-                  {header.text}
-                </th>
+      <div class="rounded-lg overflow-hidden border border-gray-400">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr>
+              <For each={headers().mainHeader}>
+                {(header) => (
+                  <th scope="col" colSpan={header.colSpan} class={header.className}>
+                    {header.text}
+                  </th>
+                )}
+              </For>
+            </tr>
+            <tr class="bg-[#F9FAFB]">
+              <For each={headers().subHeader}>
+                {(header) => (
+                  <th scope="col" class={header.className}>
+                    {header.text}
+                  </th>
+                )}
+              </For>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <For each={table.getRowModel().rows}>
+              {(row) => (
+                <tr>
+                  <For each={row.getVisibleCells()}>
+                    {(cell) => {
+                      const meta = cell.column.columnDef.meta as any;
+                      const className = meta?.className ? meta.className() : "";
+                      return <td class={className}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>;
+                    }}
+                  </For>
+                </tr>
               )}
             </For>
-          </tr>
-          <tr class="bg-[#F9FAFB]">
-            <For each={headers().subHeader}>
-              {(header, index) => (
-                <th scope="col" class={header.className}>
-                  {header.text}
-                </th>
-              )}
-            </For>
-          </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-          <For each={table.getRowModel().rows}>
-            {(row, rowIndex) => (
-              <tr>
-                <For each={row.getVisibleCells()}>
-                  {(cell, cellIndex) => {
-                    const meta = cell.column.columnDef.meta as any
-                    const className = meta?.className ? meta.className() : ""
-
-                    return <td class={className}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-                  }}
-                </For>
+            {total() && (
+              <tr class="bg-gray-50">
+                <td class="p-[5px] whitespace-nowrap font-bold text-[14px] text-gray-700 border-r border-gray-400">
+                  Total
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-bold text-[14px] text-gray-700 text-right border-r border-gray-400">
+                  {total()?.closingBalance}
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-bold text-[14px] text-gray-700 text-right border-r border-gray-400">
+                  {total()?.expectedDepreciation}
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-bold text-[14px] text-gray-700 text-right border-r border-gray-400">
+                  {total()?.actualDepreciation}
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-bold text-[14px] text-gray-700 text-right border-r border-gray-400">
+                  {total()?.difference}
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-medium text-[14px] text-gray-700 text-right border-r border-gray-400">
+                  {total()?.result}
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-bold text-[14px] text-gray-700 text-right border-r border-gray-400">
+                  {total()?.expectedAccumulated}
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-bold text-[14px] text-gray-700 text-right border-r border-gray-400">
+                  {total()?.actualAccumulated}
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-bold text-[14px] text-gray-700 text-right border-r   border-gray-400">
+                  {total()?.differenceAccumulated}
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-medium text-[14px] text-gray-700 text-right border-r border-gray-400">
+                  {total()?.resultAccumulated}
+                </td>
+                <td class="p-[5px] whitespace-nowrap font-medium text-[14px] text-gray-700 ">
+                </td>
               </tr>
             )}
-          </For>
-          {total() && (
-            <tr class="bg-gray-50 font-medium">
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 rounded-bl-lg">
-                Total
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.closingBalance}
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.expectedDepreciation}
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.actualDepreciation}
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.difference}
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.result}
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.expectedAccumulated}
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.actualAccumulated}
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.differenceAccumulated}
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.resultAccumulated}
-              </td>
-              <td class="p-[5px] border border-gray-300 whitespace-nowrap font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 rounded-br-lg"></td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }

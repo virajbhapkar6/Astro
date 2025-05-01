@@ -1,28 +1,28 @@
 {
     "headers": {
       "mainHeader": [
-        { "text": "", "colSpan": 1, "className": "w-[149px] h-[30px] border border-gray-300 text-xs text-gray-700 rounded-tl-lg" },
-        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-gray-300 text-xs text-gray-700" },
-        { "text": "Depreciation in the current period", "colSpan": 2, "className": "w-[227.32px] h-[30px] border border-gray-300 text-xs text-gray-700 bg-[#E6E6FA]" },
-        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-gray-300 text-xs text-gray-700" },
-        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-gray-300 text-xs text-gray-700" },
-        { "text": "Depreciation in the current period", "colSpan": 2, "className": "w-[217.86px] h-[30px] border border-gray-300 text-xs text-gray-700 bg-[#E6E6FA]" },
-        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-gray-300 text-xs font-medium text-gray-700" },
-        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px] border border-gray-300 text-xs font-medium text-gray-700" },
-        { "text": "", "colSpan": 1, "className": "w-[61px] h-[30px] border border-gray-300 text-xs font-medium text-gray-700 rounded-tr-lg" }
+        { "text": "", "colSpan": 1, "className": "w-[149px] h-[30px]  text-xs text-gray-700 rounded-tl-lg border-r border-gray-400 border-b border-gray-400 " },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px]  text-xs text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 " },
+        { "text": "Depreciation in the current period", "colSpan": 2, "className": "w-[227.32px] h-[30px]  text-xs text-gray-700 bg-[#E6E6FA] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 " },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px]  text-xs text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 " },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px]  text-xs text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 " },
+        { "text": "Depreciation in the current period", "colSpan": 2, "className": "w-[217.86px] h-[30px]  text-xs text-gray-700 bg-[#E6E6FA] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 " },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px]  text-xs font-medium text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 " },
+        { "text": "", "colSpan": 1, "className": "w-[114.16px] h-[30px]  text-xs font-medium text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 " },
+        { "text": "", "colSpan": 1, "className": "w-[61px] h-[30px]  text-xs font-medium text-gray-700 rounded-tr-lg  border-b border-gray-400 border-l border-gray-400 " }
       ],
       "subHeader": [
-        { "text": "Category of assets", "className": "w-[149px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Closing balance in original cost", "className": "w-[114.16px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Expected depreciation expense", "className": "w-[114.16px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Actual depreciation expense", "className": "w-[114.16px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Difference", "className": "w-[114.16px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Result", "className": "w-[114.16px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Expected accumulated DEPR expense", "className": "w-[104.7px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Actual accumulated DEPR", "className": "w-[114.16px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Difference", "className": "w-[114.16px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Result", "className": "w-[114.16px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" },
-        { "text": "Notes", "className": "w-[61px] h-[70px] p-[2px] border border-gray-300 text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700" }
+        { "text": "Category of assets", "className": "w-[149px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400  border-t border-gray-400" },
+        { "text": "Closing balance in original cost", "className": "w-[114.16px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" },
+        { "text": "Expected depreciation expense", "className": "w-[114.16px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" },
+        { "text": "Actual depreciation expense", "className": "w-[114.16px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" },
+        { "text": "Difference", "className": "w-[114.16px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" },
+        { "text": "Result", "className": "w-[114.16px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" },
+        { "text": "Expected accumulated DEPR expense", "className": "w-[104.7px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" },
+        { "text": "Actual accumulated DEPR", "className": "w-[114.16px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" },
+        { "text": "Difference", "className": "w-[114.16px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" },
+        { "text": "Result", "className": "w-[114.16px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" },
+        { "text": "Notes", "className": "w-[61px] h-[70px] p-[2px]  text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700  border-b border-gray-400 border-l border-gray-400 border-t border-gray-400" }
       ]
     },
     "items": [

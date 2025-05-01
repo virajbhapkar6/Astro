@@ -18,8 +18,8 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: (index: number, isLast: boolean) =>
-          `w-[279px] h-[30px] p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 ${
-            isLast ? "rounded-bl-lg border-b border-gray-300" : ""
+          `w-[279px] h-[30px] p-[4px] border-r border-gray-400 border-b border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 ${
+            isLast ? "rounded-bl-lg " : ""
           }`,
       },
     },
@@ -29,7 +29,7 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[279px] h-[30px] p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-center",
+          "w-[279px] h-[30px] p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-center",
       },
     },
     {
@@ -38,7 +38,7 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "w-[278px] h-[30px] p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-center",
+          "w-[278px] h-[30px] p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-center",
       },
     },
     {
@@ -47,8 +47,8 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: (index: number, isLast: boolean) =>
-          `w-[387px] h-[30px] p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-center ${
-            isLast ? "rounded-br-lg border-b border-gray-300" : ""
+          `w-[387px] h-[30px] p-[4px] border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 text-center ${
+            isLast ? "rounded-br-lg" : ""
           }`,
       },
     },
@@ -63,8 +63,8 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
   })
 
   return (
-    <div class="w-[1218px] h-[198px] rounded-lg">
-      <table class="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-300 border-separate border-spacing-0 shadow-lg">
+    <div class="w-[1218px] h-[207px] overflow-hidden border border-gray-400 rounded-lg">
+      <table class="min-w-full full border-collapse shadow-lg">
         <thead class="bg-[#F3F4F6]">
           <tr class="bg-gray-50">
             <For each={headers().mainHeader}>
@@ -85,7 +85,7 @@ export default function UsefulLifeTable(props: UsefulLifeTableProps) {
             </For>
           </tr>
         </thead>
-        <tbody class="bg-white divide-y divide-gray-200 border border-gray-300">
+        <tbody class="bg-white ">
           <For each={table.getRowModel().rows}>
             {(row, rowIndex) => (
               <tr>

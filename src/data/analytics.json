@@ -4,65 +4,65 @@
         {
           "text": "",
           "colSpan": 1,
-          "className": "w-[188px] h-[20px] border border-gray-300 text-left text-xs font-medium bg-white rounded-tl-lg"
+          "className": "w-[188px] h-[20px] text-left text-xs font-medium bg-white rounded-tl-lg border-r border-gray-400 border-b border-gray-400  "
         },
         {
           "text": "2023",
           "colSpan": 3,
-          "className": "w-[442.5px] h-[20px] border border-gray-300 text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-300 bg-[#777695]"
+          "className": "w-[442.5px] h-[20px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-300 bg-[#777695] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 "
         },
         {
           "text": "2022",
           "colSpan": 3,
-          "className": "w-[442.5px] h-[20px] border border-gray-300 text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-300 bg-[#777695]"
+          "className": "w-[442.5px] h-[20px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-300 bg-[#777695] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 "
         },
         {
           "text": "",
           "colSpan": 1,
-          "className": "border border-gray-300 text-center text-xs font-medium text-gray-700 bg-white"
+          "className": " text-center text-xs font-medium text-gray-700 bg-white border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 "
         },
         {
           "text": "",
           "colSpan": 1,
-          "className": "border border-gray-300 text-center text-xs font-medium text-gray-700 bg-white rounded-tr-lg"
+          "className": " text-center text-xs font-medium text-gray-700 bg-white rounded-tr-lg  border-b border-gray-400 border-l border-gray-400 "
         }
       ],
       "subHeader": [
         {
           "text": "Category of assets",
-          "className": "w-[188.35px] h-[80px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[188.35px] h-[80px] p-[4px] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400  border-t border-gray-400"
         },
         {
           "text": "Closing balance in original cost",
-          "className": "w-[164.78px] h-[80px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[164.78px] h-[80px] p-[4px] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400"
         },
         {
           "text": "Actual depreciation expense",
-          "className": "w-[146.09px] h-[80px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[146.09px] h-[80px] p-[4px] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400"
         },
         {
           "text": "% of depreciation to original cost",
-          "className": "w-[134.48px] h-[80px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[134.48px] h-[80px] p-[4px] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400"
         },
         {
           "text": "Closing balance in original cost",
-          "className": "w-[164.56px] h-[80px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[164.56px] h-[80px] p-[4px] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400"
         },
         {
           "text": "Actual depreciation expense",
-          "className": "w-[145.29px] h-[80px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[145.29px] h-[80px] p-[4px] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400"
         },
         {
           "text": "% of depreciation to original cost",
-          "className": "w-[134.58px] h-[80px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[134.58px] h-[80px] p-[4px] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400"
         },
         {
           "text": "Flux",
-          "className": "w-[87.82px] h-[80px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[87.82px] h-[80px] p-[4px] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400"
         },
         {
           "text": "Notes",
-          "className": "w-[62px] h-[80px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[62px] h-[80px] p-[4px] text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700  border-b border-gray-400 border-l border-gray-400 border-t border-gray-400"
         }
       ]
     },

@@ -14,9 +14,9 @@ export default function ConclusionsTable(props: ConclusionsTableProps) {
 
   const renderReviewBadge = (value: string) => {
     if (value === "RT") {
-      return <IconBadge type="RT" className="pr-1.5 pl-2.5" />
+      return <IconBadge type="RT" className="pr-2.3 pl-1" />
     } else if (value === "SH") {
-      return <IconBadge type="SH" className="pr-2.5" />
+      return <IconBadge type="SH" className="pr-1.4" />
     }
     return null
   }
@@ -28,7 +28,7 @@ export default function ConclusionsTable(props: ConclusionsTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "px-2 py-1.5 font-inter font-normal text-xs leading-[150%] tracking-[0%] text-gray-700 align-middle border-r border-gray-400",
+          "px-2 py-1.5 font-inter font-normal text-xs leading-[150%] tracking-[0%] text-gray-700 align-middle border-r border-gray-400 border-b border-gray-400  border-t border-gray-400",
       },
     },
     {
@@ -42,7 +42,7 @@ export default function ConclusionsTable(props: ConclusionsTableProps) {
         return null
       },
       meta: {
-        className: () => "px-2 py-1.5 border-r border-gray-400",
+        className: () => "px-2 py-1.5 border-b border-gray-400 border-l border-gray-400 ",
       },
     },
     {
@@ -64,7 +64,7 @@ export default function ConclusionsTable(props: ConclusionsTableProps) {
         return null
       },
       meta: {
-        className: () => "w-[15px] px-2 py-1.5 border-r border-gray-400",
+        className: () => "w-[15px] px-2 py-1.5  border-b border-gray-400 border-l border-gray-400",
       },
     },
     {
@@ -81,7 +81,7 @@ export default function ConclusionsTable(props: ConclusionsTableProps) {
         </div>
       ),
       meta: {
-        className: () => "px-3 py-1.5 text-right",
+        className: () => "px-3 py-1.5 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
   ] as ColumnDef<Conclusion>[]
@@ -95,15 +95,15 @@ export default function ConclusionsTable(props: ConclusionsTableProps) {
   })
 
   return (
-    <div class="w-[1215px] h-[165px] border border-gray-400 rounded-lg overflow-hidden shadow-lg">
-      <table class="w-[1220px] h-[140px] text-sm text-gray-700">
+    <div class="w-[1215px] h-[165px] overflow-hidden border border-gray-400 rounded-lg shadow-lg">
+      <table class="w-[1220px] h-[140px] border-collapse text-sm text-gray-700">
         <thead>
-          <tr class="bg-gray-100 text-sm text-gray-800">
+          <tr class="bg-gray-100 text-sm text-gray-800 border-r border-gray-400 border-b border-gray-400">
             <For each={headers()}>
               {(header) => (
                 <th class={header.className}>
                   {header.hasIcon ? (
-                    <div class="flex justify-center items-center">
+                    <div class="flex justify-center items-center ">
                       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M3.125 13.75H10.625"
@@ -132,7 +132,7 @@ export default function ConclusionsTable(props: ConclusionsTableProps) {
         <tbody>
           <For each={table.getRowModel().rows}>
             {(row) => (
-              <tr class="border-t border-gray-400 p-[5px]">
+              <tr class="border-r border-gray-400 border-b border-gray-400 border-t border-gray-400 p-[5px]">
                 <For each={row.getVisibleCells()}>
                   {(cell) => {
                     const meta = cell.column.columnDef.meta as any

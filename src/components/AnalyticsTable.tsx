@@ -19,7 +19,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "p-[4px] border-r border-gray-400 border-b border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -28,7 +28,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -37,7 +37,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -46,7 +46,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -55,7 +55,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -64,7 +64,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -73,7 +73,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -82,7 +82,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
     {
@@ -132,7 +132,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
         ) : null,
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
+          "p-[4px]  border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700",
       },
     },
   ] as ColumnDef<AnalyticsData>[]
@@ -146,8 +146,8 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
   })
 
   return (
-    <div class="rounded-lg shadow-lg">
-      <table class="min-w-full divide-y divide-gray-200 w-[1218px] h-[237px] border-separate border-spacing-0 rounded-lg">
+    <div class="rounded-lg overflow-hidden border border-gray-400 shadow-lg">
+      <table class="min-w-full w-[1218px] border-collapse h-[237px] rounded-lg">
         <thead class="bg-gray-50">
           <tr>
             <For each={headers().mainHeader}>
@@ -168,7 +168,7 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
             </For>
           </tr>
         </thead>
-        <tbody class="bg-white divide-y divide-gray-200 p-2">
+        <tbody class="bg-white p-2">
           <For each={table.getRowModel().rows}>
             {(row, rowIndex) => (
               <tr>
@@ -185,31 +185,31 @@ export default function AnalyticsTable(props: AnalyticsTableProps) {
           </For>
           {total() && (
             <tr class="bg-[#FFFFFF] font-medium">
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 rounded-bl-lg">
+              <td class="p-[4px] border-r border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 rounded-bl-lg">
                 Total
               </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
+              <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
                 {total()?.closingBalance2023}
               </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
+              <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
                 {total()?.actualDepreciation2023}
               </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
+              <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
                 {total()?.percentDepreciation2023}
               </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
+              <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
                 {total()?.closingBalance2022}
               </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
+              <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
                 {total()?.actualDepreciation2022}
               </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
+              <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-right font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
                 {total()?.percentDepreciation2022}
               </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-center font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
+              <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-center font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700">
                 {total()?.flux}
               </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 rounded-br-lg">
+              <td class="p-[4px] border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-bold text-[14px] leading-[150%] tracking-[0%] text-gray-700 rounded-br-lg">
                 &nbsp;
               </td>
             </tr>

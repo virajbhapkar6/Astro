@@ -4,64 +4,64 @@
         {
           "text": "",
           "colSpan": 1,
-          "className": "p-[4px] text-left text-xs font-medium text-[#F9FAFB] border border-gray-300 bg-white rounded-tl-lg"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 text-left text-xs font-medium text-gray-300  bg-white rounded-tl-lg"
         },
         {
           "text": "2023",
           "colSpan": 3,
-          "className": "p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] border border-gray-300 bg-[#777695]"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400  text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-300  bg-[#777695]"
         },
         {
           "text": "2022",
           "colSpan": 3,
-          "className": "p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] border border-gray-300 bg-[#777695] rounded-tr-lg"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-300  bg-[#777695] rounded-tr-lg"
         }
       ],
       "methodHeader": [
         {
           "text": "",
           "colSpan": 1,
-          "className": "p-[4px] text-left text-xs font-medium text-[#F9FAFB] border border-gray-300"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400  border-t border-gray-400 text-left text-xs font-medium text-gray-300 "
         },
         {
           "text": "Straight-line method",
           "colSpan": 3,
-          "className": "p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-700 border border-gray-300 bg-[#E6E6FA]"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-700  bg-purple-100"
         },
         {
           "text": "Straight-line method",
           "colSpan": 3,
-          "className": "p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-700 border border-gray-300 bg-[#E6E6FA]"
+          "className": "p-[4px]  border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-gray-700  bg-purple-100"
         }
       ],
       "subHeader": [
         {
           "text": "Depreciation Policy",
-          "className": "p-[4px] text-left font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 border border-gray-300 bg-[#F3F4F6]"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 border-t border-gray-400 text-left font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700  bg-purple-80"
         },
         {
           "text": "Useful life (Month)",
-          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 border border-gray-300 bg-[#F3F4F6]"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700  bg-purple-80"
         },
         {
           "text": "Residual value rate",
-          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 border border-gray-300 bg-[#F3F4F6]"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700  bg-purple-80"
         },
         {
           "text": "Depreciation rate",
-          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 border border-gray-300 bg-[#F3F4F6]"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700  bg-purple-80"
         },
         {
           "text": "Useful life (Month)",
-          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 border border-gray-300 bg-[#F3F4F6]"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700  bg-purple-80"
         },
         {
           "text": "Residual value rate",
-          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 border border-gray-300 bg-[#F3F4F6]"
+          "className": "p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700  bg-purple-80"
         },
         {
           "text": "Depreciation rate",
-          "className": "p-[4px] text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700 border border-gray-300 bg-[#F3F4F6]"
+          "className": "p-[4px]  border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-medium text-[14px] leading-[150%] tracking-[0%] text-gray-700  bg-purple-80"
         }
       ]
     },

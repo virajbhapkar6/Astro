@@ -4,35 +4,35 @@
         {
           "text": "",
           "colSpan": 1,
-          "className": "w-[279px] h-[20px] p-[4px] border border-gray-300 text-left text-xs font-medium text-gray-700 bg-white rounded-tl-lg"
+          "className": "w-[279px] h-[20px] p-[4px] border-r border-gray-400 border-b border-gray-400 text-left text-xs font-medium text-gray-700 bg-white rounded-tl-lg"
         },
         {
           "text": "",
           "colSpan": 1,
-          "className": "w-[278px] h-[20px] p-[4px] border border-gray-300 text-left text-xs font-medium text-gray-700 bg-white"
+          "className": "w-[278px] h-[20px] p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400  text-left text-xs font-medium text-gray-700 bg-white"
         },
         {
           "text": "Depreciation policy of the company",
           "colSpan": 3,
-          "className": "w-[664px] h-[20px] p-[4px] text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB] border border-gray-300 bg-[#777695] rounded-tr-lg"
+          "className": "w-[664px] h-[20px] p-[4px] border-b border-gray-400 border-l border-gray-400  text-center font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-[#F9FAFB]  bg-[#777695] rounded-tr-lg"
         }
       ],
       "subHeader": [
         {
           "text": "Fixed assets",
-          "className": "w-[279px] h-[30px] p-[4px] border border-gray-300 text-left font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[279px] h-[30px] p-[4px] border-r border-gray-400 border-b border-gray-400 border-t border-gray-400 text-left font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
         },
         {
           "text": "Useful life (Month)",
-          "className": "w-[278px] h-[30px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[278px] h-[30px] p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
         },
         {
           "text": "Useful life",
-          "className": "w-[278px] h-[30px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[278px] h-[30px] p-[4px] border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
         },
         {
           "text": "Agree with the book record?",
-          "className": "w-[387px] h-[30px] p-[4px] border border-gray-300 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
+          "className": "w-[387px] h-[30px] p-[4px]  border-b border-gray-400 border-l border-gray-400 border-t border-gray-400 text-center font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700"
         }
       ]
     },

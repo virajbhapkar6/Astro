@@ -19,7 +19,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 font-['Inter'] bg-[#F3F4F6]",
+          "p-[4px]  whitespace-nowrap text-center font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 font-['Inter'] bg-purple-80 border-r border-gray-400 border-b border-gray-400 border-t border-gray-400",
       },
     },
     {
@@ -27,7 +27,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       header: "Overhead",
       cell: (info) => info.getValue(),
       meta: {
-        className: () => "p-[4px] border border-gray-300 whitespace-nowrap text-sm text-gray-700 text-right",
+        className: () => "p-[4px]  whitespace-nowrap text-sm text-gray-700 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
     {
@@ -35,7 +35,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       header: "Selling",
       cell: (info) => info.getValue(),
       meta: {
-        className: () => "p-[4px] border border-gray-300 whitespace-nowrap text-sm text-gray-700 text-right",
+        className: () => "p-[4px]  whitespace-nowrap text-sm text-gray-700 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
     {
@@ -43,7 +43,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       header: "G&A",
       cell: (info) => info.getValue(),
       meta: {
-        className: () => "p-[4px] border border-gray-300 whitespace-nowrap text-sm text-gray-700 text-right",
+        className: () => "p-[4px]  whitespace-nowrap text-sm text-gray-700 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
     {
@@ -51,7 +51,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       header: "R&D",
       cell: (info) => info.getValue(),
       meta: {
-        className: () => "p-[4px] border border-gray-300 whitespace-nowrap text-sm text-gray-700 text-right",
+        className: () => "p-[4px]  whitespace-nowrap text-sm text-gray-700 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
     {
@@ -60,7 +60,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-800 text-right",
+          "p-[4px]  whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-800 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 ",
       },
     },
     {
@@ -69,7 +69,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "p-[4px]  whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
     {
@@ -78,7 +78,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "p-[4px]  whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
     {
@@ -87,7 +87,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "p-[4px]  whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right border-r border-gray-400 border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
     {
@@ -96,7 +96,7 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
       cell: (info) => info.getValue(),
       meta: {
         className: () =>
-          "p-[4px] border border-gray-300 whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right",
+          "p-[4px]  whitespace-nowrap font-inter font-medium text-sm leading-[150%] tracking-[0%] text-gray-700 text-right border-b border-gray-400 border-l border-gray-400 border-t border-gray-400",
       },
     },
   ] as ColumnDef<MonthlyAllocation>[]
@@ -123,110 +123,113 @@ export default function DepreciationAllocationTable(props: DepreciationAllocatio
   )
 
   return (
-    <div class="w-[1218px] h-[445px] rounded-lg shadow-lg">
-      <table class="min-w-full divide-y divide-gray-200 border-separate border-spacing-0 rounded-lg">
-        <thead class="bg-[#F3F4F6]">
-          <tr>
-            <For each={headers().mainHeader}>
-              {(header, index) => (
-                <th scope="col" colSpan={header.colSpan} rowSpan={header.rowSpan} class={header.className}>
-                  {header.hasArrow ? (
-                    <div class="flex justify-center items-center gap-2">
-                      <span>{header.text}</span>
-                      <ArrowIcon />
-                    </div>
-                  ) : (
-                    header.text
-                  )}
-                </th>
-              )}
-            </For>
-          </tr>
-          <tr class="bg-[#F3F4F6]">
-            <For each={headers().subHeader}>
-              {(header, index) => (
-                <th scope="col" class={header.className}>
-                  {header.hasArrow ? (
-                    <div class="flex justify-center items-center gap-1">
-                      <span>{header.text}</span>
-                      <ArrowIcon />
-                    </div>
-                  ) : (
-                    header.text
-                  )}
-                </th>
-              )}
-            </For>
-          </tr>
-        </thead>
-        <tbody class="bg-[#FFFFFF] divide-y divide-gray-200">
-          <For each={table.getRowModel().rows}>
-            {(row, rowIndex) => (
-              <tr>
-                <For each={row.getVisibleCells()}>
-                  {(cell, cellIndex) => {
-                    const meta = cell.column.columnDef.meta as any
-                    const className = meta?.className ? meta.className() : ""
+    <div class="w-[1218px]">
+      {/* Table container with overflow-hidden */}
+      <div class="w-full border border-gray-400 rounded-lg shadow-lg overflow-hidden">
+        <table class="min-w-full border-collapse">
+          <thead class="bg-[#F3F4F6]">
+            <tr>
+              <For each={headers().mainHeader}>
+                {(header, index) => (
+                  <th scope="col" colSpan={header.colSpan} rowSpan={header.rowSpan} class={header.className}>
+                    {header.hasArrow ? (
+                      <div class="flex justify-center items-center gap-2">
+                        <span>{header.text}</span>
+                        <ArrowIcon />
+                      </div>
+                    ) : (
+                      header.text
+                    )}
+                  </th>
+                )}
+              </For>
+            </tr>
+            <tr class="bg-[#F3F4F6]">
+              <For each={headers().subHeader}>
+                {(header, index) => (
+                  <th scope="col" class={header.className}>
+                    {header.hasArrow ? (
+                      <div class="flex justify-center items-center gap-1">
+                        <span>{header.text}</span>
+                        <ArrowIcon />
+                      </div>
+                    ) : (
+                      header.text
+                    )}
+                  </th>
+                )}
+              </For>
+            </tr>
+          </thead>
+          <tbody class="bg-[#FFFFFF]">
+            <For each={table.getRowModel().rows}>
+              {(row, rowIndex) => (
+                <tr>
+                  <For each={row.getVisibleCells()}>
+                    {(cell, cellIndex) => {
+                      const meta = cell.column.columnDef.meta as any
+                      const className = meta?.className ? meta.className() : ""
 
-                    return <td class={className}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-                  }}
-                </For>
+                      return <td class={className}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                    }}
+                  </For>
+                </tr>
+              )}
+            </For>
+            {total() && (
+              <tr class="bg-[#F3F4F6] font-medium  border-t border-gray-400">
+                <td class="p-[4px] border-r border-gray-400   border-t border-gray-400 whitespace-nowrap text-sm font-medium text-center text-gray-300 bg-[#777695] rounded-bl-lg">
+                  Total
+                </td>
+                <td class="p-[4px] border-r border-gray-400 border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
+                  {total()?.overhead}
+                </td>
+                <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
+                  {total()?.selling}
+                </td>
+                <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
+                  {total()?.gAndA}
+                </td>
+                <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
+                  {total()?.rAndD}
+                </td>
+                <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#FFFFFF] text-right bg-[#777695]">
+                  {total()?.total}
+                </td>
+                <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right">
+                  {total()?.overheadPercent}
+                </td>
+                <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right">
+                  {total()?.sellingPercent}
+                </td>
+                <td class="p-[4px] border-r border-gray-400  border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right">
+                  {total()?.gAndAPercent}
+                </td>
+                <td class="p-[4px]   border-l border-gray-400 border-t border-gray-400 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right rounded-br-lg">
+                  {total()?.rAndDPercent}
+                </td>
               </tr>
             )}
-          </For>
-          {total() && (
-            <tr class="bg-[#F3F4F6] font-medium">
-              <td class="p-[4px] whitespace-nowrap text-sm font-medium text-center text-[#F9FAFB] bg-[#777695] rounded-bl-lg">
-                Total
-              </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
-                {total()?.overhead}
-              </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
-                {total()?.selling}
-              </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
-                {total()?.gAndA}
-              </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap text-sm font-medium text-gray-700 text-right">
-                {total()?.rAndD}
-              </td>
-              <td class="p-[4px] whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-[#FFFFFF] text-right bg-[#777695]">
-                {total()?.total}
-              </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.overheadPercent}
-              </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.sellingPercent}
-              </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right">
-                {total()?.gAndAPercent}
-              </td>
-              <td class="p-[4px] border border-gray-300 whitespace-nowrap font-inter font-bold text-sm leading-[150%] tracking-[0%] text-gray-700 text-right rounded-br-lg">
-                {total()?.rAndDPercent}
-              </td>
-            </tr>
-          )}
-        </tbody>
-        <tfoot class="m-0 p-0 h-0">
-          <tr class="m-0 p-0 h-0">
-            <td class="w-[116px] p-0 m-0 h-0 text-center"></td>
-            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-[#CB4E4E]">
-              GL
-            </td>
-            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-[#CB4E4E]">
-              GL
-            </td>
-            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-[#CB4E4E]">
-              GL
-            </td>
-            <td class="w-[124.38px] p-0 m-0 h-0 text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-[#CB4E4E]">
-              GL
-            </td>
-          </tr>
-        </tfoot>
-      </table>
+          </tbody>
+        </table>
+      </div>
+
+      {/* Separate GL labels section */}
+      <div class="flex mt-2">
+        <div class="w-[116px]"></div> {/* Spacer for alignment */}
+        <div class="w-[124.38px] text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-red-500">
+          GL
+        </div>
+        <div class="w-[124.38px] text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-red-500">
+          GL
+        </div>
+        <div class="w-[124.38px] text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-red-500">
+          GL
+        </div>
+        <div class="w-[124.38px] text-center text-[#CB4E4E] font-inter font-extrabold text-sm leading-[150%] tracking-[0%] text-red-500">
+          GL
+        </div>
+      </div>
     </div>
   )
 }

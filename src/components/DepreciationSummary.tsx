@@ -56,7 +56,7 @@ const DepreciationSummary: Component<DepreciationSummaryProps> = (props) => {
           <ProgressStepper steps={steps} />
         </div>
 
-        <div class="border border-gray-200 w-[1258px] h-[272px] rounded-lg p-4 bg-white shadow-lg">
+        <div class="border border-gray-400 w-[1258px] h-[272px] rounded-lg p-4 bg-white shadow-lg">
           <div class="w-full">
             <div class="flex justify-between items-center gap-[20px] mb-2">
               <div class="flex items-center space-x-2">
@@ -78,7 +78,7 @@ const DepreciationSummary: Component<DepreciationSummaryProps> = (props) => {
                 <img class="w-8 h-8 border-2 border-white rounded-full dark:border-gray-800" src={myimage.src} alt="" />
                 <img class="w-8 h-8 border-2 border-white rounded-full dark:border-gray-800" src={mygmage.src} alt="" />
               </div>
-              <button class="ml-2 bg-purple-400 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-purple-700 transition-colors">
+              <button class="ml-2 bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-purple-700 transition-colors">
                   View Team
               </button>
               </div>
@@ -94,23 +94,23 @@ const DepreciationSummary: Component<DepreciationSummaryProps> = (props) => {
 
         <div class="space-y-4">
          
-        <div class="border border-gray-200 rounded-lg p-4 bg-white shadow-lg w-[1258px] h-[312px]">
+        <div class="border border-gray-400 rounded-lg p-4 bg-white shadow-lg w-[1258px] h-[312px]">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-gray-800 mb-2">Depreciation Policy</h2>
           <DepreciationPolicyTable policyData={props.policyData} />
         </div>
-        <div class="w-[1258px] h-[284px] border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+        <div class="w-[1258px] h-[284px] border border-gray-400 rounded-lg p-4 bg-white shadow-lg">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-gray-800 mb-2">Review of Useful Life</h2>
           <UsefulLifeTable usefulLifeData={props.usefulLifeData} />
           </div>
-          <div class="w-[1258px] h-[362px] border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+          <div class="w-[1258px] h-[362px] border-l border-gray-400 rounded-lg p-4 bg-white shadow-lg">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-gray-800 mb-2">Analytics</h2>
           <AnalyticsTable analyticsData={props.analyticsData} />
           </div>
-          <div class="w-[1258px] h-[546px] border border-gray-200 rounded-lg p-4  bg-white shadow-lg">
+          <div class="w-[1258px] h-[546px] border border-gray-400 rounded-lg p-4  bg-white shadow-lg">
           <h2 class="w-[1218px] h-[24px] font-inter font-bold text-base leading-[150%] tracking-[0%] text-gray-800 mb-2">Depreciation Allocation</h2>
           <DepreciationAllocationTable allocationData={props.allocationData} />
           </div>
-          <div class="w-[1258px] h-[400px] border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+          <div class="w-[1258px] h-[400px] border border-gray-400 rounded-lg p-4 bg-white shadow-lg">
           <h2 class="font-inter font-bold text-base leading-[150%] tracking-[0%] text-gray-800">Recalculation of Depreciation</h2>
           <h3 class="font-inter font-semibold text-base leading-[150%] tracking-[0%] text-gray-800 mb-2">Summary by Category</h3>
           <RecalculationTable recalculationData={props.recalculationData} />
