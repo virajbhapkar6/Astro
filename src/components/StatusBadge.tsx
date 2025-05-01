@@ -1,6 +1,6 @@
 import type { Component } from "solid-js"
 
-type StatusType = "E/O" | "P" | "V/A" | "D/D"
+type StatusType = "E/O" | "P" | "V/A" | "D/D" | "P/D"
 
 type StatusBadgeProps = {
   status: StatusType
@@ -16,6 +16,8 @@ const StatusBadge: Component<StatusBadgeProps> = (props) => {
       case "V/A":
         return "bg-[#D85151]"
       case "D/D":
+        return "bg-[#14B8A6]"
+      case "P/D":
         return "bg-[#14B8A6]"
       default:
         return "bg-gray-500"

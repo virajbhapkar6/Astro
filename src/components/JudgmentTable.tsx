@@ -1,5 +1,4 @@
 import { FiAlertCircle } from "solid-icons/fi"
-import myimage from '../assets/Avtar1.jpg'
 
 interface Indicator {
   description: string;
@@ -72,50 +71,49 @@ const JudgmentTable = () => {
   }
 
   return (
-    <div class="bg-white rounded-lg shadow-md">
+    <div class="bg-white rounded-lg w-[1258px] h-[763px] shadow-md">
       <div class="p-4">
         <h2 class="font-inter font-bold text-[16px] leading-[150%] tracking-[0%] text-gray-800">Judgment of long-term asset impairment</h2>
         <h2 class="font-inter font-semibold text-[16px] leading-[150%] tracking-[0%] text-gray-700">Table 1</h2>
       </div>
 
       <div class="p-4">
-        <table class="w-full border">
-          <thead>
-            <tr class="bg-gray-100 text-sm">
-              <th class="p-2 text-center w-1/2 font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r">External Indicators</th>
-              <th class="p-2 text-center w-1/6 font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r">Evaluation</th>
-              <th class="p-2 text-center w-1/3 font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700">Judgmental basis</th>
-            </tr>
-          </thead>
-          <tbody>
-            {externalIndicators.map((indicator: Indicator) => (
-              <tr class="border-t">
-                <td class="p-2 font-inter font-normal text-[12px] leading-[150%] tracking-[0%] text-gray-700 border-r">{indicator.description}</td>
-                <td class="p-2 font-inter font-normal text-[12px] leading-[150%] tracking-[0%] text-gray-700 border-r">{getEvaluationBadge(indicator.evaluation)}</td>
-                <td class="p-2 font-inter font-normal text-[12px] leading-[150%] tracking-[0%] text-gray-700 text-center">{indicator.judgmentalBasis}</td>
+        <div class="rounded-lg overflow-hidden border border-gray-400">
+          <table class="w-full w-[1218px] h-[447px] border-collapse">
+            <thead>
+              <tr class="bg-purple-80 text-sm">
+                <th class="p-2 text-center w-1/2 w-[549px] h-[30px] font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400">External Indicators</th>
+                <th class="p-2 text-center w-1/6 w-[122px] h-[30px] font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400">Evaluation</th>
+                <th class="p-2 text-center w-1/3 w-[549px] h-[30px] font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700">Judgmental basis</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-
-        <table class="w-full border mt-4">
-          <thead>
-            <tr class="bg-gray-100 text-sm">
-              <th class="p-2 text-center w-1/2 font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r">Internal Indicators</th>
-              <th class="p-2 text-center w-1/6 font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r">Evaluation</th>
-              <th class="p-2 text-center w-1/3 font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700">Judgmental basis</th>
-            </tr>
-          </thead>
-          <tbody>
-            {internalIndicators.map((indicator: Indicator) => (
-              <tr class="border-t">
-                <td class="p-2 font-inter font-normal text-[12px] leading-[150%] tracking-[0%] text-gray-700 border-r">{indicator.description}</td>
-                <td class="p-2 font-inter font-normal text-[12px] leading-[150%] tracking-[0%] text-gray-700 border-r">{getEvaluationBadge(indicator.evaluation)}</td>
-                <td class="p-2 font-inter font-normal text-[12px] leading-[150%] tracking-[0%] text-gray-700 text-center">{indicator.judgmentalBasis}</td>
+            </thead>
+            <tbody>
+              {externalIndicators.map((indicator: Indicator) => (
+                <tr class="border-t border-gray-400">
+                  <td class="p-2 font-inter font-normal w-[549px] h-[30px] text-[12px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400">{indicator.description}</td>
+                  <td class="p-2 font-inter font-normal w-[122px] h-[30px] text-[12px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400">{getEvaluationBadge(indicator.evaluation)}</td>
+                  <td class="p-2 font-inter font-normal w-[549px] h-[30px] text-[12px] leading-[150%] tracking-[0%] text-gray-700 text-center">{indicator.judgmentalBasis}</td>
+                </tr>
+              ))}
+            </tbody>
+            <thead>
+              <tr class="bg-purple-80 text-sm">
+                <th class="p-2 text-center w-1/2 font-inter w-[549px] h-[30px] font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-t border-gray-400">Internal Indicators</th>
+                <th class="p-2 text-center w-1/6 font-inter w-[122px] h-[30px]  font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400 border-t border-gray-400">Evaluation</th>
+                <th class="p-2 text-center w-1/3 font-inter w-[549px] h-[30px]  font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-t border-gray-400">Judgmental basis</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {internalIndicators.map((indicator: Indicator) => (
+                <tr class="border-t border-gray-400">
+                  <td class="p-2 font-inter font-normal w-[549px] h-[30px] text-[12px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400">{indicator.description}</td>
+                  <td class="p-2 font-inter font-normal w-[122px] h-[30px] text-[12px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400">{getEvaluationBadge(indicator.evaluation)}</td>
+                  <td class="p-2 font-inter font-normal w-[549px] h-[30px]  text-[12px] leading-[150%] tracking-[0%] text-gray-700 text-center">{indicator.judgmentalBasis}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   )

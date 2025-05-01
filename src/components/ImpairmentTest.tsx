@@ -2,17 +2,24 @@
 
 import { createSignal } from "solid-js"
 import { FiSearch, FiUpload } from "solid-icons/fi"
+import StatusBadge from "./StatusBadge"
+import myVmage from './assets/Vector.png'
 
 const ImpairmentTest = () => {
   const [searchTerm, setSearchTerm] = createSignal("")
 
   return (
-    <div class="bg-white rounded-lg shadow-md">
-      <div class="flex justify-between items-center p-4 border-b">
-        <div class="w-[1258px] h-[61px] flex items-center space-x-2">
-          <h2 class="w-[128px] h-[24px] font-inter font-bold text-[16px] leading-[150%] tracking-[0%] text-gray-800">Impairment Test</h2>
-          <span class="bg-red-500 text-white text-xs px-2 py-0.5 rounded">V/A</span>
-          <span class="bg-teal-500 text-white text-xs px-2 py-0.5 rounded">P/D</span>
+    <div class="bg-white w-[1258px] h-[61px] rounded-lg shadow-md">
+      <div class="flex justify-between items-center p-4">
+        <div class=" flex items-center space-x-2">
+          <h2 class="w-[128px] h-[24px] font-inter font-bold text-[16px] leading-[150%] tracking-[0%] text-gray-800">
+            Impairment Test
+          </h2>
+          <img class="w-[15px] h-[15px]" src={myVmage.src} alt="" />
+          <div class="flex items-center space-x-2 ml-2 ">
+                <StatusBadge status="V/A" />
+                <StatusBadge status="P/D" />
+          </div>
         </div>
         <div class="flex items-center space-x-2">
           <div class="relative">
