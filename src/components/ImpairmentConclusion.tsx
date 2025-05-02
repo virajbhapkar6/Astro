@@ -2,10 +2,10 @@ import type { Component } from "solid-js"
 
 const ImpairmentConclusion: Component = () => {
   return (
-    <div class="w-[1211px] h-[170px] border border-[#C0C0C0] rounded-lg overflow-hidden shadow-lg">
-      <table class="w-[1208px] h-[140px] text-sm text-gray-700">
+    <div class="w-full h-full border border-gray-400 rounded-lg overflow-hidden shadow-lg">
+      <table class="w-full h-full text-sm text-gray-700">
             <thead>
-                <tr class="bg-[#F3F4F6] text-sm text-gray-800">
+                <tr class="bg-purple-80 text-sm text-gray-800">
                 <th class="text-left font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] p-[5px] border-r border-gray-400">Conclusions</th>
                 <th class="text-left font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] p-[5px]  border-r border-gray-400">Preparation</th>
                 <th class="text-left flex justify-center items-center font-inter font-semibold text-sm leading-[150%] tracking-[0%] text-[#4F4F4F] p-[5px] border-r border-gray-400">Review</th>

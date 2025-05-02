@@ -24,12 +24,29 @@ const StatusBadge: Component<StatusBadgeProps> = (props) => {
     }
   }
 
+  const getDescription = () => {
+    switch (props.status) {
+      case "V/A":
+        return "Valuation or Allocation"
+      case "P/D":
+        return "Presentation and Disclosure"
+      default:
+        return "text"
+    }
+  }
+
   return (
-    <span
-      class={`inline-flex items-center justify-center px-2 py-1 text-xs font-medium rounded-full ${getColor()}`}
-    >
-      {props.status}
-    </span>
+    <div class="relative group">
+      <span
+        class={`inline-flex items-center justify-center px-2 py-1 text-xs font-medium rounded-full ${getColor()}`}
+      >
+        {props.status}
+      </span>
+      <div class="absolute invisible group-hover:visible bg-purple-80 text-black text-sm rounded-md py-2 px-3 min-w-[160px] text-center bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10 whitespace-nowrap">
+        {getDescription()}
+        <div class="absolute w-2 h-2 bg-purple-80 transform rotate-45 left-1/2 -translate-x-1/2 -bottom-1"></div>
+      </div>
+    </div>
   )
 }
 

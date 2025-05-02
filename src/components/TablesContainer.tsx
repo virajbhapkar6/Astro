@@ -119,9 +119,9 @@ const TablesContainer: Component = () => {
   }
 
   return (
-    <div class="bg-white rounded-lg w-[1258px] shadow-md">
+    <div class="bg-white rounded-lg w-full shadow-md">
       {/* Impairment Test Header */}
-      <div class="flex justify-between items-center p-4 border-b border-gray-200">
+      <div class="flex justify-between items-center p-4 border-b border-gray-400">
         <div class="flex items-center space-x-2">
           <h2 class="w-[128px] h-[24px] font-inter font-bold text-[16px] leading-[150%] tracking-[0%] text-gray-800">
             Impairment Test
@@ -145,10 +145,10 @@ const TablesContainer: Component = () => {
               onInput={(e) => setSearchTerm(e.currentTarget.value)}
             />
           </div>
-          <button class="bg-purple-600 text-white px-4 py-2 rounded-md text-sm flex items-center space-x-1">
-            <FiUpload class="h-4 w-4" />
-            <span>Upload</span>
-          </button>
+          <button class="w-[78px] h-[41px] gap-[10px] pt-[10px] pr-[15px] pb-[10px] pl-[15px] rounded-[8px] bg-purple-400 text-gray-300 font-medium text-[14px] leading-[150%] tracking-[0%] font-['Inter']">
+            Upload
+          </button> 
+
         </div>
       </div>
 
@@ -162,7 +162,7 @@ const TablesContainer: Component = () => {
 
       <div class="px-4 pb-4">
         <div class="rounded-lg overflow-hidden border border-gray-400">
-          <table class="w-full w-[1218px] border-collapse">
+          <table class="w-full w-full border-collapse">
             <thead>
               <tr class="bg-gray-100 text-sm">
                 <th class="p-2 text-center w-1/2 w-[549px] h-[30px] font-inter font-semibold text-[14px] leading-[150%] tracking-[0%] text-gray-700 border-r border-gray-400">
@@ -225,15 +225,13 @@ const TablesContainer: Component = () => {
 
       {/* Provision Table */}
       <div class="px-4 pt-2 pb-4">
-        <div class="w-[1218px] h-[48px] p-2 mb-2">
-          <h2 class="font-inter font-bold text-[16px] leading-[150%] tracking-[0%] text-gray-800">
-            Provision for impairment calculation
-          </h2>
-          <h3 class="font-inter font-semibold text-[16px] leading-[150%] tracking-[0%] text-gray-700">Table 2</h3>
-        </div>
+        <h2 class="font-inter font-bold text-[16px] leading-[150%] tracking-[0%] text-gray-800">
+          Provision for impairment calculation
+        </h2>
+        <h3 class="font-inter font-semibold text-[16px] leading-[150%] tracking-[0%] text-gray-700">Table 2</h3>
 
-        <div class="rounded-lg overflow-hidden border border-gray-400">
-          <table class="w-[1218px] w-full text-sm border-collapse">
+        <div class="rounded-lg overflow-hidden border border-gray-400 shadow-lg">
+          <table class="w-[1218px] w-full text-sm border-collapse shadow-lg">
             <thead>
               <tr class="w-[64.125px] h-[54px] font-inter font-semibold text-[12px] leading-[150%] tracking-[0%] text-center text-gray-800 bg-gray-100">
                 <th class="p-2 border-r border-gray-400 border-b border-gray-400 text-center rounded-tl-lg">
@@ -315,7 +313,7 @@ const TablesContainer: Component = () => {
                   </td>
                 </tr>
               ))}
-              <tr class="bg-white border-t border-gray-400 w-[84.125px] h-[30px] p-[10px] gap-[10px]">
+              <tr class="bg-white border-t border-gray-400 w-[84.125px] h-full p-[10px] gap-[10px]">
                 <td class="p-2 border-r border-gray-400 text-center">
                   -
                 </td>
